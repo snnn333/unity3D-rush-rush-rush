@@ -29,13 +29,37 @@ public class CameraControl : MonoBehaviour
     //速度
     public float Damping = 10F;
 
-    private Quaternion mRotation;
+    private Quaternion mRotation = Quaternion.identity;
 
     void Start()
     {
         //初始化旋转角度
-        mX = transform.eulerAngles.x;
-        mY = transform.eulerAngles.y;
+        // mX = transform.eulerAngles.x;
+        // mY = transform.eulerAngles.y;
+        //transform.position = new Vector3(-12.2319355f, 31.3339634f, 21.7906647f);
+        
+        mRotation = Quaternion.Euler(mY, mX, 0);
+        //根据是否插值采取不同的角度计算方式
+        if (isNeedDamping)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, mRotation, Time.deltaTime * Damping);
+        }
+        else
+        {
+            transform.rotation = mRotation;
+        }
+        
+        Vector3 mPosition = mRotation * new Vector3(0.0F, 0.0F, -Distance) + Target.position;
+
+        //设置相机的角度和位置
+        if (isNeedDamping)
+        {
+            transform.position = Vector3.Lerp(transform.position, mPosition, Time.deltaTime * Damping);
+        }
+        else
+        {
+            transform.position = mPosition;
+        }
     }
 
     void LateUpdate()
@@ -61,11 +85,6 @@ public class CameraControl : MonoBehaviour
             {
                 transform.rotation = mRotation;
             }
-            //处理同时按下鼠标右键和方向控制键
-           /* if (Target.GetComponent<NoLockiVew_Player>().State == NoLockiVew_Player.PlayerState.Walk)
-            {
-                Target.rotation = Quaternion.Euler(new Vector3(0, mX, 0));
-            }*/
         }
 
         //鼠标滚轮缩放
