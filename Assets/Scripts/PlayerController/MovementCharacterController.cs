@@ -83,7 +83,7 @@ namespace PlatformCharacterController
         [Tooltip("This is the animator for you character.")]
         public Animator PlayerAnimator;
 
-
+    
         [Header("Effects")] [Tooltip("This position is in the character feet and is use to instantiate effects.")]
         public Transform LowZonePosition;
 
@@ -115,7 +115,7 @@ namespace PlatformCharacterController
         private bool _dash;
         private bool _flyJetPack;
         private bool _slowFall;
-
+        public Health Health;
         //get direction for the camera
         private Transform _cameraTransform;
         private Vector3 _forward;
@@ -132,12 +132,15 @@ namespace PlatformCharacterController
         private bool _activeFall;
         private Vector3 _hitNormal;
         private Vector3 _move;
+        private Rigidbody rigid;
         private Vector3 _direction;
-
+        [SerializeField] float fallThreshold = 5f;
+        public float previousY = 0f;
         private void Awake()
         {
             PlayerInputs = GetComponent<Inputs>();
             _controller = GetComponent<CharacterController>();
+            rigid = GetComponent<Rigidbody>();
             _characterTransform = transform;
             _originalRunningSpeed = RunningSpeed;
         }
@@ -151,7 +154,35 @@ namespace PlatformCharacterController
 
         private void Update()
         {
+            bool previous = _isGrounded;
             CheckGroundStatus();
+            if (previous && !_isGrounded )
+            {   
+                // Debug.Log("Falling");
+                previousY = _characterTransform.position.y;
+                Debug.Log("Previous Y: " + previousY);
+            }
+            
+            if (!previous && _isGrounded)
+            {   
+                if (_velocity.y * -1 > fallThreshold)
+                {
+                    // check if the player is falling a certain distance
+                    // if so, do damage
+                    if (previousY - _characterTransform.position.y > 5f)
+                    {
+                        Debug.Log("Fell from a great height");
+                        int damage = 1;
+                        GameObject.Find("Player").GetComponent<Health>().TakeDamage(damage);    
+                    }
+                    
+                    
+                    // int damage = 1;
+                    // GameObject.Find("Player").GetComponent<Health>().TakeDamage(damage);
+                    // Debug.Log("Do Damage" + _velocity.y);
+                }
+                // Debug.Log("Do Damage" + (_velocity.y * -1));
+            }
             //capture input in this region, you can use PlayerInput class or simple replace "_jump = PlayerInputs.Jump()" whit  _jump = Input.GetButtonDown("buttonName") for example.
             _horizontal = PlayerInputs.GetHorizontal();
             _vertical = PlayerInputs.GetVertical();

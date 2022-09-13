@@ -16,7 +16,10 @@ public class BagOnDrag : MonoBehaviour, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta;
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            rectTransform.anchoredPosition += eventData.delta;
+        }
     }
     
 }
