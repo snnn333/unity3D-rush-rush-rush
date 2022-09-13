@@ -14,7 +14,7 @@ public class InventoryObject : ScriptableObject
     public Inventory Container;
 
 
-    public void AddItem(Item _item, int _amount)
+    public void AddItem(InventoryItem _item, int _amount)
     {
         if (_item.buffs.Length > 0)
         {
@@ -33,7 +33,7 @@ public class InventoryObject : ScriptableObject
         SetEmptySlot(_item, _amount);
 
     }
-    public InventorySlot SetEmptySlot(Item _item, int _amount)
+    public InventorySlot SetEmptySlot(InventoryItem _item, int _amount)
     {
         for (int i = 0; i < Container.Items.Length; i++)
         {
@@ -55,7 +55,7 @@ public class InventoryObject : ScriptableObject
     }
 
 
-    public void RemoveItem(Item _item)
+    public void RemoveItem(InventoryItem _item)
     {
         for (int i = 0; i < Container.Items.Length; i++)
         {
@@ -66,7 +66,7 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-    public void RemoveItemId(Item _item)
+    public void RemoveItemId(InventoryItem _item)
     {
         for (int i = 0; i < Container.Items.Length; i++)
         {
@@ -77,7 +77,7 @@ public class InventoryObject : ScriptableObject
         }
     }
 
-    public bool ContainsItem(Item _item){
+    public bool ContainsItem(InventoryItem _item){
         if(_item != null){
             for (int i = 0; i < Container.Items.Length; i++)
             {
@@ -155,7 +155,7 @@ public class Inventory
 public class InventorySlot
 {
     public int ID = -1;
-    public Item item;
+    public InventoryItem item;
     public int amount;
     public InventorySlot()
     {
@@ -163,13 +163,13 @@ public class InventorySlot
         item = null;
         amount = 0;
     }
-    public InventorySlot(int _id, Item _item, int _amount)
+    public InventorySlot(int _id, InventoryItem _item, int _amount)
     {
         ID = _id;
         item = _item;
         amount = _amount;
     }
-    public void UpdateSlot(int _id, Item _item, int _amount)
+    public void UpdateSlot(int _id, InventoryItem _item, int _amount)
     {
         ID = _id;
         item = _item;

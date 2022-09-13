@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         if (item)
         {
-            Item _item = new Item(item.item);
+            InventoryItem _item = new InventoryItem(item.item);
             Debug.Log(_item.Id);
             inventory.AddItem(_item, 1);
             Destroy(other.gameObject);

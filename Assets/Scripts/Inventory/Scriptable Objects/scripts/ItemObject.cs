@@ -26,20 +26,20 @@ public abstract class ItemObject : ScriptableObject
     public string description;
     public ItemBuff[] buffs;
 
-    public Item CreateItem()
+    public InventoryItem CreateItem()
     {
-        Item newItem = new Item(this);
+        InventoryItem newItem = new InventoryItem(this);
         return newItem;
     }
 }
 
 [System.Serializable]
-public class Item
+public class InventoryItem
 {
     public string Name;
     public int Id;
     public ItemBuff[] buffs;
-    public Item(ItemObject item)
+    public InventoryItem(ItemObject item)
     {
         Name = item.name;
         Id = item.Id;

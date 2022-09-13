@@ -17,7 +17,7 @@ public class GameItem : MonoBehaviour
         var player = other.GetComponent<Player>();
         if (player)
         {
-            Item _item = new Item(player.inventory.database.GetItem[colliderId]);
+            InventoryItem _item = new InventoryItem(player.inventory.database.GetItem[colliderId]);
             Debug.Log(colliderId);
             if(player.inventory.ContainsItemId(colliderId)){
                 player.inventory.RemoveItemId(_item);
