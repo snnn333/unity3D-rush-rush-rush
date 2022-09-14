@@ -12,6 +12,9 @@ public class ItemOnWorld : MonoBehaviour
     {
         // If we don't have this item
         // We need to iterate to find empty position
+        if(other.gameObject.CompareTag("Player")){
+
+        
         if (!myBag.itemList.Contains(thisItem))
         {
             if (other.gameObject.CompareTag("Player"))
@@ -31,5 +34,8 @@ public class ItemOnWorld : MonoBehaviour
         {
             thisItem.num++;
         }
+        Destroy(this.gameObject);
+        }   
+        
     }
 }
