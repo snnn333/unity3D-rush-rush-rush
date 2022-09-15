@@ -193,31 +193,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1731205
+      value: -1.8811014
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.862369
+      value: 9.084377
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2018375
+      value: -7.2030535
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.86055064
+      value: 0.91141003
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.2812689
+      value: 0.41127807
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.40365463
+      value: 0.012304626
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13192186
+      value: -0.0055482886
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1911694269}
+    - target: {fileID: 1667689006716623421, guid: 889b683b5234c684b95f070217835010, type: 3}
+      propertyPath: Distance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623422, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_Name
       value: Main Camera (1)
@@ -257,6 +261,10 @@ PrefabInstance:
       value: 'Right Click to Rotate Camera
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974046678368944, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224610132236640268, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_Pivot.x
