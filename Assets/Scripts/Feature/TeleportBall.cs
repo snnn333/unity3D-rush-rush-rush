@@ -6,19 +6,26 @@ namespace PlatformCharacterController
 {
     public class TeleportBall : MonoBehaviour
     {
-        Vector3 m_StartPosition;
+		public Transform TeleportPosition;
+        public Rigidbody rb;
 
-        void Start()
+		void Start() {
+			rb = GetComponent<Rigidbody>();
+		}
+
+        void RespawnBall()
         {
-            m_StartPosition = transform.position;
+            transform.position = TeleportPosition.position;
+            rb.velocity = new Vector3(0, 0, 0);
+            // transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
         }
 
         private void FixedUpdate()
-        {
-            if (transform.position.y < -5)
+        {	
+			// Teleport to the original position after falling under the lava
+            if (transform.position.y < -2)
             {
-                transform.position = new Vector3(3F, 5.5F, -10.5F);
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                Invoke("RespawnBall", 1.0f);
             }
         }
     }
