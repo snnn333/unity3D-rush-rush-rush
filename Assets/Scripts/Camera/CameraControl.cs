@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
     //观察目标
     public Transform Target;
     //观察距离
-    public float Distance = 500F;
+    public float Distance = 25F;
     //旋转速度
     private float SpeedX = 240;
     private float SpeedY = 120;
@@ -15,8 +15,8 @@ public class CameraControl : MonoBehaviour
     private float MaxLimitY = 180;
 
     //旋转角度
-    private float mX = 0.0F;
-    private float mY = 0.0F;
+    public float RotateX = 0.0F;
+    public float RotateY = 45.0F;
 
     //鼠标缩放距离最值
     private float MaxDistance = 100;
@@ -34,11 +34,11 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         //初始化旋转角度
-        // mX = transform.eulerAngles.x;
-        // mY = transform.eulerAngles.y;
+        // RotateX = transform.eulerAngles.x;
+        // RotateY = transform.eulerAngles.y;
         //transform.position = new Vector3(-12.2319355f, 31.3339634f, 21.7906647f);
         
-        mRotation = Quaternion.Euler(mY, mX, 0);
+        mRotation = Quaternion.Euler(RotateY, RotateX, 0);
         //根据是否插值采取不同的角度计算方式
         if (isNeedDamping)
         {
@@ -68,14 +68,14 @@ public class CameraControl : MonoBehaviour
         if (Target != null && Input.GetMouseButton(1))
         {
             //获取鼠标输入
-            mX += Input.GetAxis("Mouse X") * SpeedX * 0.02F;
-            mY -= Input.GetAxis("Mouse Y") * SpeedY * 0.02F;
+            RotateX += Input.GetAxis("Mouse X") * SpeedX * 0.02F;
+            RotateY -= Input.GetAxis("Mouse Y") * SpeedY * 0.02F;
             //范围限制
-            mY = ClampAngle(mY, MinLimitY, MaxLimitY);
+            RotateY = ClampAngle(RotateY, MinLimitY, MaxLimitY);
             //计算旋转
             //我们可以通过Quaternion.Euler()方法将一个Vector3类型的值转化为一个四元数
             //，进而通过修改Transform.Rotation来实现相同的目的
-            mRotation = Quaternion.Euler(mY, mX, 0);
+            mRotation = Quaternion.Euler(RotateY, RotateX, 0);
             //根据是否插值采取不同的角度计算方式
             if (isNeedDamping)
             {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1400194787}
-  m_IndirectSpecularColor: {r: 0.45595145, g: 0.5003924, b: 0.5470582, a: 1}
+  m_IndirectSpecularColor: {r: 0.45594972, g: 0.5003909, b: 0.54705787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -795,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224610132236640268, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224610132236640268, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1067,11 +1067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.162742
+      value: -14.981483
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1079,7 +1079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.493336
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2240,7 +2240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224610132236640268, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224610132236640268, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4217,7 +4217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623409, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4263,6 +4263,10 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1911694269}
+    - target: {fileID: 1667689006716623421, guid: 889b683b5234c684b95f070217835010, type: 3}
+      propertyPath: Distance
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1667689006716623422, guid: 889b683b5234c684b95f070217835010, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -4542,7 +4546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564873977459895992, guid: 494a86a59cbfae54484569a95fbb0914, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4564873977459895992, guid: 494a86a59cbfae54484569a95fbb0914, type: 3}
       propertyPath: m_LocalPosition.x
