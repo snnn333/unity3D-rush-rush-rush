@@ -15,9 +15,15 @@ public class InteractiveItem : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
-            if(myBag.itemList.Contains(key)){
+            if(myBag.itemList.Contains(key) && key.num > 0){
                 Destroy(this.gameObject);
                 Debug.Log("Door Opened");
+                
+                if(key.num <= 1){
+                    myBag.itemList.Remove(key);
+                }else{
+                    key.num -= 1;
+                }
             }else{
                 Debug.Log("Needs key to open door");
             }
