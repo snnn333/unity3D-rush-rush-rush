@@ -20,7 +20,14 @@ public class InteractiveItem : MonoBehaviour
                 Debug.Log("Door Opened");
                 
                 if(key.num <= 1){
-                    myBag.itemList.Remove(key);
+                    for (int i = 0; i < myBag.itemList.Count; i++){
+                        if(myBag.itemList[i] == key){
+                            myBag.itemList[i] = null;
+                            break;
+                        }
+                    }
+             
+                    // myBag.itemList.Remove(key);
                 }else{
                     key.num -= 1;
                 }
