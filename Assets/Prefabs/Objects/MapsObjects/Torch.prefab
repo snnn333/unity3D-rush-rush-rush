@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8797168395400524188}
   - component: {fileID: 5600799663267200569}
   - component: {fileID: 7664843817236548339}
-  - component: {fileID: 710066099623766014}
+  - component: {fileID: 7083703160298175009}
+  - component: {fileID: 6780833056488889884}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -84,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &710066099623766014
+--- !u!114 &7083703160298175009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,9 +94,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8168969691714579238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2b0763ae203e04b8bc7fe73a48e768, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fbf7120cb13d9a489cb18e31de1721b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderId: 0
+  thisItem: {fileID: 11400000, guid: 5a83e2af7573fce48bb0ed0129788566, type: 2}
   myBag: {fileID: 11400000, guid: 6873874353f216246b12c19047143efd, type: 2}
-  key: {fileID: 11400000, guid: 5a83e2af7573fce48bb0ed0129788566, type: 2}
+--- !u!65 &6780833056488889884
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168969691714579238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6.3868465, z: 2}
+  m_Center: {x: 0, y: 0.32856727, z: 0}
