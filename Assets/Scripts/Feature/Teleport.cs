@@ -31,6 +31,7 @@ namespace PlatformCharacterController
         {
             if (other.CompareTag("Player"))
             {
+                GameObject.Find("Player").GetComponent<Health>().TakeDamage(1);  
                 StartCoroutine(other.GetComponent<MovementCharacterController>()
                     .DeactivatePlayerControlByTime(TimeToControlPlayer));
                 StartCoroutine(TeleportPlayer(other.transform));

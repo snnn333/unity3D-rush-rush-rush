@@ -16,7 +16,6 @@ public class Health : MonoBehaviour
     public void TakeDamage(int health)
     {
         currentHealth -= health;
-        Debug.Log("Health: " + currentHealth);
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
@@ -25,6 +24,7 @@ public class Health : MonoBehaviour
         {
             currentHealth = 0;
             // Die
+            Debug.Log("Player Died");
         }
     }
 
