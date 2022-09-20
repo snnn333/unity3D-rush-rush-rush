@@ -18,17 +18,12 @@ public class InteractiveItem : MonoBehaviour
             if(myBag.itemList.Contains(key) && key.num > 0){
                 Destroy(this.gameObject);
                 Debug.Log("Door Opened");
-                
-                if(key.num <= 1){
-                    for (int i = 0; i < myBag.itemList.Count; i++){
-                        if(myBag.itemList[i] == key){
-                            myBag.itemList[i] = null;
-                            break;
-                        }
-                    }
-             
-                    // myBag.itemList.Remove(key);
-                }else{
+
+                if (key.num <= 1)
+                {
+                    myBag.itemList.Remove(key);
+                } else
+                {
                     key.num -= 1;
                 }
             }else{
