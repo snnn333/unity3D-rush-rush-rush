@@ -30,7 +30,11 @@ namespace PlatformCharacterController
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
-            {
+            {   
+
+                // Minus one live after the player hitting the lava or the enemy
+                GameObject.Find("Player").GetComponent<Health>().TakeDamage(1);
+
                 StartCoroutine(other.GetComponent<MovementCharacterController>()
                     .DeactivatePlayerControlByTime(TimeToControlPlayer));
                 StartCoroutine(TeleportPlayer(other.transform));

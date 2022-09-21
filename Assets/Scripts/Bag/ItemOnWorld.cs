@@ -12,24 +12,37 @@ public class ItemOnWorld : MonoBehaviour
     {
         // If we don't have this item
         // We need to iterate to find empty position
-        if (!myBag.itemList.Contains(thisItem))
-        {
-            if (other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player")){
+            if(thisItem.name == "Bread"){
+                Health health = other.gameObject.GetComponent<Health>();
+                if(health.maxHealth > health.currentHealth){
+                    health.currentHealth += 1;
+                    Destroy(this.gameObject);
+                    return;
+                }
+            }
+        
+            if (!myBag.itemList.Contains(thisItem))
             {
-                for (int i = 0; i < myBag.itemList.Count; i++)
+                if (other.gameObject.CompareTag("Player"))
                 {
-                    // Find empty grid
-                    if (myBag.itemList[i] == null)
+                    for (int i = 0; i < myBag.itemList.Count; i++)
                     {
-                        myBag.itemList[i] = thisItem;
-                        break;
+                        // Find empty grid
+                        if (myBag.itemList[i] == null)
+                        {
+                            myBag.itemList[i] = thisItem;
+                            break;
+                        }
                     }
                 }
             }
-        }
-        else
-        {
-            thisItem.num++;
-        }
+            else
+            {
+                thisItem.num++;
+            }
+            Destroy(this.gameObject);
+        }   
+        
     }
 }
