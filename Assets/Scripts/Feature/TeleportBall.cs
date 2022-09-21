@@ -25,7 +25,7 @@ namespace PlatformCharacterController
 			// Teleport to the original position after falling under the lava
             if (transform.position.y < -2)
             {
-                Invoke("RespawnBall", 1.0f);
+                RespawnBall();
             }
         }
     }
