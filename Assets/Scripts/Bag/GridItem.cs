@@ -15,19 +15,20 @@ public class GridItem : MonoBehaviour
 
     public void onClicked()
     {
-        BagManger.UpdateItemInfo(itemInfo);
+        BagManager.UpdateItemInfo(itemInfo);
     }
 
-    public void SetupGridItem(Item item)
+    public void SetupGridItem(Item myItem)
     {
-        if (item == null)
+        if (myItem == null || myItem.num == 0)
         {
             itemInSlot.SetActive(false);
             return;
         }
 
-        image.sprite = item.image;
-        numText.text = item.num.ToString();
-        itemInfo = item.description;
+        item = myItem;
+        image.sprite = myItem.image;
+        numText.text = myItem.num.ToString();
+        itemInfo = myItem.description;
     }
 }
