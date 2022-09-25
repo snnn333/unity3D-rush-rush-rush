@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     // Update Health
     public void TakeDamage(int health)
     {
+        StatisticManager.addHealthReduction(health);
+        
         currentHealth -= health;
         if (currentHealth > maxHealth)
         {
@@ -31,6 +33,8 @@ public class Health : MonoBehaviour
     // Gain Health
     public void GainHealth(int health)
     {
+        StatisticManager.addHealthGained(health);
+        
         currentHealth += health;
         if (currentHealth > maxHealth)
         {
