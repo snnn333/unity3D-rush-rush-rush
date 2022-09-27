@@ -10,11 +10,12 @@ public class StatisticManager : MonoBehaviour
     [Serializable]
     public class StatisticFile
     {
-        public string dateTime;
-        public int healthReduction;
-        public int healthGained;
-        public float lastLevelTime;
-        public float firstLevelTime;
+        public string dateTime; // End date time, primary key to identify this game.
+        public int healthReduction; // Total health reduction
+        public int healthGained; // Total health gained
+        public float lastLevelTime; // Time of last level started
+        public float firstLevelTime; // Time span of first level
+        public float totalTime;
     }
     
     private static StatisticManager instance;
@@ -51,8 +52,12 @@ public class StatisticManager : MonoBehaviour
 
     
 
-    public void OnApplicationQuit()
+    public static void QuitAndSaveData()
     {
         // Save Data
+        //
+        instance.statisticFile.totalTime = Time.time;
+        Debug.Log(instance.statisticFile.totalTime);
+        // TODO: Return to main panel
     }
 }
