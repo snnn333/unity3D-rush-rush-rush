@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
 {
     public int maxHealth = 3;
     public int currentHealth;
+    public GameObject gameOverObj;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +27,12 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            
             // Die
             Debug.Log("Player Died");
+            gameOverObj.SetActive(true);
+            StatisticManager.QuitAndSaveData();
+            Application.Quit();
         }
     }
 
