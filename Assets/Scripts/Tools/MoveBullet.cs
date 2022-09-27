@@ -40,7 +40,7 @@ public class MoveBullet : MonoBehaviour
         {
             transform.position = m_StartPosition;
             IsMoving = false;
-            sleepSeconds = 0.2f;
+            sleepSeconds = 0.5f;
             StartCoroutine(waiter());
         }
     }
