@@ -7,6 +7,7 @@ public class ItemOnWorld : MonoBehaviour
 {
     public Item thisItem;
     public Bag myBag;
+    public string itemMessage = "You picked up ";
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,11 +22,13 @@ public class ItemOnWorld : MonoBehaviour
                     return;
                 }
             }
-        
+
+            DisplayMessage(itemMessage + thisItem.name);
             if (!myBag.itemList.Contains(thisItem))
             {
                 if (other.gameObject.CompareTag("Player"))
                 {
+
                     for (int i = 0; i < myBag.itemList.Count; i++)
                     {
                         // Find empty grid
@@ -43,6 +46,14 @@ public class ItemOnWorld : MonoBehaviour
             }
             Destroy(this.gameObject);
         }   
+        
+    }
+
+    private void DisplayMessage(string msg){
+        var message = GameObject.FindGameObjectsWithTag("MessageCenter");
+        if(message != null && message.Length > 0){
+            message[0].GetComponent<Notification>().setMessage(msg);
+        }
         
     }
 }
