@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Proyecto26;
 
 
 public class StatisticManager : MonoBehaviour
@@ -50,13 +50,19 @@ public class StatisticManager : MonoBehaviour
         instance.statisticFile.healthGained += addNum;
     }
 
-    
+    private static void PostToDatabase()
+    {
+        RestClient.Post("https://csci-526-rushrushrush-default-rtdb.firebaseio.com/.json ",
+            instance.statisticFile);
+    }
 
     public static void QuitAndSaveData()
     {
         // Save Data
         //
         instance.statisticFile.totalTime = Time.time;
+        instance.statisticFile.dateTime = DateTime.Now.ToString();
+        PostToDatabase();
         Debug.Log(instance.statisticFile.totalTime);
         // TODO: Return to main panel
     }
