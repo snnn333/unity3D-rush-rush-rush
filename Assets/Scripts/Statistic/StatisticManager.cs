@@ -52,6 +52,7 @@ public class StatisticManager : MonoBehaviour
 
     private static void PostToDatabase()
     {
+        Debug.Log("Post the data to the database");
         RestClient.Post("https://csci-526-rushrushrush-default-rtdb.firebaseio.com/.json ",
             instance.statisticFile);
     }
