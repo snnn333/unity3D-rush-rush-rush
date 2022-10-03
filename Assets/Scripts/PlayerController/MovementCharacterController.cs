@@ -136,6 +136,9 @@ namespace PlatformCharacterController
         private Vector3 _direction;
         [SerializeField] float fallThreshold = 5f;
         public float previousY = 0f;
+
+        public Health health;
+        
         private void Awake()
         {
             PlayerInputs = GetComponent<Inputs>();
@@ -143,6 +146,7 @@ namespace PlatformCharacterController
             rigid = GetComponent<Rigidbody>();
             _characterTransform = transform;
             _originalRunningSpeed = RunningSpeed;
+            health = GetComponent<Health>();
         }
 
         private void Start()
@@ -154,6 +158,11 @@ namespace PlatformCharacterController
 
         private void Update()
         {
+            if (health.currentHealth <= 0)
+            {
+                return;
+            }
+            
             bool previous = _isGrounded;
             CheckGroundStatus();
             if (previous && !_isGrounded )
@@ -173,7 +182,7 @@ namespace PlatformCharacterController
                     {
                         Debug.Log("Fell from a great height");
                         int damage = 1;
-                        GameObject.Find("Player").GetComponent<Health>().TakeDamage(damage);    
+                        GameObject.Find("Player").GetComponent<Health>().TakeDamage("Fall", damage);    
                     }
                     
                     

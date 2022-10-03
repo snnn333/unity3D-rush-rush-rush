@@ -15,9 +15,9 @@ public class Health : MonoBehaviour
     }
 
     // Update Health
-    public void TakeDamage(int health)
+    public void TakeDamage(string sourceName, int health)
     {
-        StatisticManager.addHealthReduction(health);
+        StatisticManager.addHealthReduction(sourceName, health);
         
         currentHealth -= health;
         if (currentHealth > maxHealth)

@@ -8,6 +8,19 @@ using Proyecto26;
 public class StatisticManager : MonoBehaviour
 {
     [Serializable]
+    public class Damage
+    {
+        public string damageSource;
+        public int damageCount;
+
+        public Damage(string name, int count)
+        {
+            damageSource = name;
+            damageCount = count;
+        }
+    }
+
+    [Serializable]
     public class StatisticFile
     {
         public string dateTime; // End date time, primary key to identify this game.
@@ -16,6 +29,8 @@ public class StatisticManager : MonoBehaviour
         public float lastLevelTime; // Time of last level started
         public float firstLevelTime; // Time span of first level
         public float totalTime;
+
+        public List<Damage> damageList;
     }
     
     private static StatisticManager instance;
@@ -38,10 +53,13 @@ public class StatisticManager : MonoBehaviour
         statisticFile.healthGained = 0;
         statisticFile.lastLevelTime = Time.time;
         statisticFile.firstLevelTime = Time.time;
+        statisticFile.damageList = new List<Damage>();
     }
 
-    public static void addHealthReduction(int addNum)
+    public static void addHealthReduction(string sourceName, int addNum)
     {
+        Damage damage = new Damage(sourceName, addNum);
+        instance.statisticFile.damageList.Add(damage);
         instance.statisticFile.healthReduction += addNum;
     }
     
