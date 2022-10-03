@@ -24,7 +24,7 @@ public class MoveWithPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Math.Abs(player.transform.position.y - m_StartPosition.y) < 1.0F)
+        if (Math.Abs(player.transform.position.y - m_StartPosition.y) < 10.0F)
         {
             // Move the cannong according to the direction
             transform.position= new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
