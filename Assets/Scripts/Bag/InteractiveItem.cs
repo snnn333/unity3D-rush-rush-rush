@@ -36,6 +36,7 @@ public class InteractiveItem : MonoBehaviour
                     DisplayMessage(successMessage);
                     Destroy(this.gameObject);
                     if(key.num <= 1){
+                        key.num = 1;
                         for (int i = 0; i < myBag.itemList.Count; i++){
                             if(myBag.itemList[i] == key){
                                 myBag.itemList[i] = null;

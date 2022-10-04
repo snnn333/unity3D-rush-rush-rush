@@ -35,6 +35,7 @@ public class ItemOnWorld : MonoBehaviour
                         if (myBag.itemList[i] == null)
                         {
                             myBag.itemList[i] = thisItem;
+                            myBag.itemList[i].num = 1;
                             break;
                         }
                     }
