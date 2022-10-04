@@ -44,10 +44,10 @@ public class MoveBullet : MonoBehaviour
             StartCoroutine(waiter());
         }
         else{
-            transform.position = m_StartPosition;
-            IsMoving = false;
-            sleepSeconds = 0.5f;
-            StartCoroutine(waiter());
+            // transform.position = m_StartPosition;
+            // IsMoving = false;
+            // sleepSeconds = 0.5f;
+            // StartCoroutine(waiter());
         }
     }
 }

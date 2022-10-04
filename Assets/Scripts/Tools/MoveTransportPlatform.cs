@@ -6,7 +6,7 @@ public class MoveTransportPlatform : MonoBehaviour
 {
     public float m_Speed = 0.1f;
     public Vector3 m_Direction = Vector3.up;
-    public Vector3 m_PositionShift;
+    public float MoveDistance = 10f;
 
     Vector3 m_StartPosition;
     bool IsMoving = false;
@@ -24,7 +24,7 @@ public class MoveTransportPlatform : MonoBehaviour
             transform.position += m_Direction * m_Speed;
         }
 
-        if (transform.position + m_StartPosition == m_PositionShift) {
+        if (IsMoving && Vector3.Distance(m_StartPosition, transform.position) > MoveDistance) {
             IsMoving = false;
         }
     }
