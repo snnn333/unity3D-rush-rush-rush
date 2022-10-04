@@ -17,16 +17,17 @@ public class TrackPlayer : MonoBehaviour
     public float waitTime = 2f;
     private Vector3 m_Direction;
     private Quaternion m_Rotation;
+
+    public string msg = "Wall destroyed by cannon!";
     // public Enums.Directions useSide = Enums.Directions.Up;
     // Start is called before the first frame update
     void Start()
     {
         m_StartPosition = transform.position;
         m_Rotation = transform.rotation;
-
         transform.rotation = Quaternion.Slerp(transform.rotation, m_Rotation, Time.time * 1000f);
         Player = GameObject.FindWithTag("Player");
-        Debug.Log("player found");
+
         StartCoroutine(waiter());
         StartCoroutine(WaitThenDie());
     }
@@ -34,11 +35,7 @@ public class TrackPlayer : MonoBehaviour
     IEnumerator WaitThenDie()
     {
         yield return new WaitForSeconds(lifeTime);
-        transform.position = m_StartPosition;
-        transform.rotation = Quaternion.Slerp(transform.rotation, m_Rotation, Time.time * 1000f);
-        StartCoroutine(waiter());
-        StartCoroutine(WaitThenDie());
-        
+        resetItem();
     }
 
 
@@ -65,15 +62,29 @@ public class TrackPlayer : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Destroyable")){
-            Destroy(other.gameObject);
-        }
+    private void resetItem(){
+        StopAllCoroutines();
         transform.position = m_StartPosition;
         transform.rotation = Quaternion.Slerp(transform.rotation, m_Rotation, Time.time * 1000f);
         StartCoroutine(waiter());
         StartCoroutine(WaitThenDie());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Destroyable"){
+            Debug.Log("destroy object");
+            Destroy(other.gameObject);
+            DisplayMessage(msg);
+        }
+        resetItem();
+    }
+
+    private void DisplayMessage(string msg){
+        var message = GameObject.FindGameObjectsWithTag("MessageCenter");
+        if(message != null && message.Length > 0){
+            message[0].GetComponent<Notification>().setMessage(msg);
+        }
         
     }
 }
