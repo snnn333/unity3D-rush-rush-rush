@@ -36,10 +36,9 @@ public class ShootBullets : MonoBehaviour
 
     private void trackPlayer(){
         var playerPosition = Player.transform.position;
-        Vector3 destPosition = new Vector3(playerPosition.x, transform.position.y, playerPosition.z);
-        float playerBulletDistance = Vector3.Distance(transform.position,destPosition);
+        float playerBulletDistance = Vector3.Distance(transform.position,playerPosition);
         if(playerBulletDistance < trackingDistance){
-            transform.LookAt(destPosition); 
+            transform.LookAt(Player.transform); 
         }
     }
 
