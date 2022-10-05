@@ -18,7 +18,9 @@ public class InteractiveItem : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
+            Debug.Log("Player entered trigger");
             if (!consumable){
+                Debug.Log("Item is not consumable");
                 if(myBag.itemList.Contains(key)){
                     DisplayMessage(successMessage);
                     Destroy(this.gameObject);
@@ -29,10 +31,12 @@ public class InteractiveItem : MonoBehaviour
                 
             }
             else{
+                Debug.Log("Item is consumable");
                 if(myBag.itemList.Contains(key) && key.num > 0){
                     DisplayMessage(successMessage);
                     Destroy(this.gameObject);
                     if(key.num <= 1){
+                        key.num = 1;
                         for (int i = 0; i < myBag.itemList.Count; i++){
                             if(myBag.itemList[i] == key){
                                 myBag.itemList[i] = null;

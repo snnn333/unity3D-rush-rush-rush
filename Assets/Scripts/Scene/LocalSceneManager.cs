@@ -19,9 +19,14 @@ public class LocalSceneManager : MonoBehaviour
 
     public static void EnterLevel1()
     {
-        SceneManager.LoadScene("Jungle - Side View 3");
+        SceneManager.LoadScene("Level 1");
     }
     
+    public static void EnterLevelSelection()
+    {
+        SceneManager.LoadScene("Level Selector");
+    }
+
     public static void EnterMainScene()
     {
         StatisticManager.QuitAndSaveData();
