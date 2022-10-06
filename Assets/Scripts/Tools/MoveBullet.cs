@@ -6,22 +6,27 @@ public class MoveBullet : MonoBehaviour
 {
     public float m_Speed = 0.1f;
     public Vector3 m_Direction = Vector3.up;
-    public float sleepSeconds = 0.2f;
+    public float sleepSeconds = 1f;
 
-    Vector3 m_StartPosition;
-    bool IsMoving = false;
+    public float maxDistance = 10.0f;
+
+    public Transform StartPosition = null;
+
+    private Vector3 m_StartPosition;
+    private bool IsMoving = false;
    
 
     void Start()
     {
         m_StartPosition = transform.position;
         // Sleep for some time before moving the cannon
-        StartCoroutine(waiter());
+        StartCoroutine(WaitThenMove());
     }
 
-    IEnumerator waiter()
+    IEnumerator WaitThenMove()
     {
-        //Wait for 4 seconds
+        // Wait some time then move the bullet
+        IsMoving = false;
         yield return new WaitForSecondsRealtime(sleepSeconds);
         IsMoving = true;
     }
@@ -32,16 +37,29 @@ public class MoveBullet : MonoBehaviour
             // Move the cannong according to the direction
             transform.position += m_Direction * m_Speed;
         }
+
+        // Stop moving the bullet after out of range
+        if (Vector3.Distance(m_StartPosition, transform.position) >= maxDistance) {
+            Reset();
+        }
+    }
+
+    private void Reset() {
+        // Reset to the original position
+        if (StartPosition == null) {
+            transform.position = m_StartPosition;
+        } else {
+            transform.position = StartPosition.position;
+        }
+        // Stop moving the bullet
+        StartCoroutine(WaitThenMove());
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cannon Receiver"))
+        if (other.CompareTag("Cannon Receiver") || Vector3.Distance(m_StartPosition, transform.position) >= maxDistance)
         {
-            transform.position = m_StartPosition;
-            IsMoving = false;
-            sleepSeconds = 0.5f;
-            StartCoroutine(waiter());
+            
         }
         else{
             // transform.position = m_StartPosition;
