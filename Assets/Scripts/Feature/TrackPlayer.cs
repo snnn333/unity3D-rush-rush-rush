@@ -56,8 +56,9 @@ public class TrackPlayer : MonoBehaviour
             }
             
             if(isTracking && playerBulletDistance < follow_distance){
-                transform.position = Vector3.MoveTowards(transform.position, playerPosition, speed * Time.deltaTime);
-                transform.LookAt(Player.transform); 
+                Vector3 DestPosition = new Vector3(playerPosition.x, transform.position.y, playerPosition.z);
+                transform.position = Vector3.MoveTowards(transform.position, DestPosition, speed * Time.deltaTime);
+                transform.LookAt(DestPosition); 
             }else{
                 transform.Translate(transform.forward*speed*Time.deltaTime, Space.World);
             }
@@ -87,8 +88,12 @@ public class TrackPlayer : MonoBehaviour
             Debug.Log("destroy object");
             Destroy(other.gameObject);
             DisplayMessage(msg);
+            resetItem();
         }
-        resetItem();
+
+        if (other.gameObject.tag == "Cannon Receiver") {
+            resetItem();
+        }
     }
 
     private void DisplayMessage(string msg){
