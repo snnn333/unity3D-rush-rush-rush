@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
-using System;
 
 public class TrackPlayer : MonoBehaviour
 {
@@ -14,14 +13,13 @@ public class TrackPlayer : MonoBehaviour
     public Vector3 m_StartPosition;
     public float follow_distance = 15f;
     // Stop tracking the player within this distance, so player can take action to dodge the bullet
+    public float stop_follow_distance = 5f;
     public float lifeTime = 10f;
     public float waitTime = 2f;
     private Vector3 m_Direction;
     private Quaternion m_Rotation;
     // Whether the bullet is tracking the player
-    private bool isTracking = false;
-    // Whether the bullet is moving or sleeping
-    private bool isMoving = true;
+    private bool isTracking = true;
 
     public string msg = "Wall destroyed by cannon!";
     // public Enums.Directions useSide = Enums.Directions.Up;
@@ -32,61 +30,55 @@ public class TrackPlayer : MonoBehaviour
         m_Rotation = transform.rotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, m_Rotation, Time.time * 1000f);
         Player = GameObject.FindWithTag("Player");
+
+        StartCoroutine(waiter());
+        StartCoroutine(WaitThenDie());
     }
 
     IEnumerator WaitThenDie()
     {
-        // The bullet can survive at most the life time, afterward the bullet will reset to the original position
         yield return new WaitForSeconds(lifeTime);
         resetItem();
     }
 
-    void FixedUpdate()
+
+
+    // Update is called once per frame
+    void Update()
     {
         if(Player != null){
             var playerPosition = Player.transform.position;
             float playerBulletDistance = Vector3.Distance(transform.position,playerPosition);
 
-            if (isMoving == false) {
-                return;
+            if (playerBulletDistance < stop_follow_distance) {
+                Debug.Log("Bullet is too close to the player. Stop tracking the player");
+                isTracking = false;
             }
-
-            // When the player is whithin the follow distance, start to track the player
-            if (isTracking == false && playerBulletDistance < follow_distance && Math.Abs(transform.position.y - playerPosition.y) < 2) {
-                isTracking = true;
-                StartCoroutine(WaitThenDie());
-            }
-
-            // When the player is still whithin the follow distance, continue to track the player
-            if(isTracking == true && playerBulletDistance < follow_distance){
+            
+            if(isTracking && playerBulletDistance < follow_distance){
                 Vector3 DestPosition = new Vector3(playerPosition.x, transform.position.y, playerPosition.z);
                 transform.position = Vector3.MoveTowards(transform.position, DestPosition, speed * Time.deltaTime);
                 transform.LookAt(DestPosition); 
-            }
-            
-            // Stop tracking the player after the player is outside of the follow radius
-            if (isTracking == true && playerBulletDistance >= follow_distance){
+            }else{
                 transform.Translate(transform.forward*speed*Time.deltaTime, Space.World);
             }
             
         }
     }
 
-    IEnumerator WaitThenLaunch()
+    IEnumerator waiter()
     {
-        // Before launching the bullet, sleep for some time
-        isMoving = false;
+        //Wait for 4 seconds
         yield return new WaitForSecondsRealtime(waitTime);
-        isMoving = true;
 
     }
 
     private void resetItem(){
-        isTracking = false;
+        isTracking = true;
         StopAllCoroutines();
         transform.position = m_StartPosition;
         transform.rotation = Quaternion.Slerp(transform.rotation, m_Rotation, Time.time * 1000f);
-        StartCoroutine(WaitThenLaunch());
+        StartCoroutine(waiter());
         StartCoroutine(WaitThenDie());
     }
 
@@ -98,7 +90,8 @@ public class TrackPlayer : MonoBehaviour
             DisplayMessage(msg);
             resetItem();
         }
-        else if (other.gameObject.tag == "Cannon Receiver") {
+
+        if (other.gameObject.tag == "Cannon Receiver") {
             resetItem();
         }
     }
