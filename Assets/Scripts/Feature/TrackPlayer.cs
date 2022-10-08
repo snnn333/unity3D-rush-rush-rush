@@ -90,9 +90,10 @@ public class TrackPlayer : MonoBehaviour
             DisplayMessage(msg);
             resetItem();
         }
-
-        if (other.gameObject.tag == "Cannon Receiver") {
+        else if (other.gameObject.tag == "Cannon Receiver") {
             resetItem();
+        } else {
+            
         }
     }
 
