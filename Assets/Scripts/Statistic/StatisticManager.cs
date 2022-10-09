@@ -18,7 +18,23 @@ public class StatisticManager : MonoBehaviour
             damageSource = name;
             damageCount = count;
         }
+        
     }
+    
+    [Serializable]
+    public class ItemData
+    {
+        public string name;
+        public float time;
+
+        public ItemData(string itemName, float itemTime)
+        {
+            name = itemName;
+            time = itemTime;
+        }
+        
+    }
+    
 
     [Serializable]
     public class StatisticFile
@@ -31,6 +47,7 @@ public class StatisticManager : MonoBehaviour
         public float totalTime;
 
         public List<Damage> damageList;
+        public List<ItemData> itemDataList;
     }
     
     private static StatisticManager instance;
@@ -54,18 +71,24 @@ public class StatisticManager : MonoBehaviour
         statisticFile.lastLevelTime = Time.time;
         statisticFile.firstLevelTime = Time.time;
         statisticFile.damageList = new List<Damage>();
+        statisticFile.itemDataList = new List<ItemData>();
     }
 
-    public static void addHealthReduction(string sourceName, int addNum)
+    public static void AddHealthReduction(string sourceName, int addNum)
     {
         Damage damage = new Damage(sourceName, addNum);
         instance.statisticFile.damageList.Add(damage);
         instance.statisticFile.healthReduction += addNum;
     }
     
-    public static void addHealthGained(int addNum)
+    public static void AddHealthGained(int addNum)
     {
         instance.statisticFile.healthGained += addNum;
+    }
+    
+    public static void AddItem(string itemName, float itemTime)
+    {
+        instance.statisticFile.itemDataList.Add(new ItemData(itemName, itemTime));
     }
 
     private static void PostToDatabase()

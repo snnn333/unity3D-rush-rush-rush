@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     // Update Health
     public void TakeDamage(string sourceName, int health)
     {
-        StatisticManager.addHealthReduction(sourceName, health);
+        StatisticManager.AddHealthReduction(sourceName, health);
         
         currentHealth -= health;
         if (currentHealth > maxHealth)
@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
     // Gain Health
     public void GainHealth(int health)
     {
-        StatisticManager.addHealthGained(health);
+        StatisticManager.AddHealthGained(health);
         
         currentHealth += health;
         if (currentHealth > maxHealth)

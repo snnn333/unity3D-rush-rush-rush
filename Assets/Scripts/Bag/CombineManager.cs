@@ -9,6 +9,7 @@ public class CombineManager : MonoBehaviour
     private static CombineManager instance;
     public Bag myBag;
     public Item keyItem;
+    public Item RustyKey;
 
     public Text text;
 
@@ -84,12 +85,24 @@ public class CombineManager : MonoBehaviour
             return;
         }
 
-        if (instance.item0.name == "RustedKey" && instance.item1.name == "Oil" || 
+        if (instance.item0.name == "RustedKey" && instance.item1.name == "Oil" ||
             instance.item1.name == "RustedKey" && instance.item0.name == "Oil")
         {
-            // Can combine
             instance.keyItem.num++;
-            
+        }
+        
+        if (instance.item0.name == "IcedKey" && instance.item1.name == "Torch" ||
+            instance.item1.name == "IcedKey" && instance.item0.name == "Torch")
+        {
+            instance.RustyKey.num++;
+        }
+
+        if (instance.item0.name == "RustedKey" && instance.item1.name == "Oil" || 
+            instance.item1.name == "RustedKey" && instance.item0.name == "Oil" ||
+            instance.item0.name == "IcedKey" && instance.item1.name == "Torch" ||
+            instance.item1.name == "IcedKey" && instance.item0.name == "Torch")
+        {
+            // Can combine
             if (!instance.myBag.itemList.Contains(instance.keyItem))
             {
                 for (int i = 0; i < instance.myBag.itemList.Count; i++)
