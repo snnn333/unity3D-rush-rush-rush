@@ -7,6 +7,8 @@ namespace PlatformCharacterController
 {
     public class TeleportToNextScene : MonoBehaviour
     {
+        public GameObject gamePassObj;
+        
         [Tooltip("Name of the next scene.")]
         public string scenename;
 
@@ -18,5 +20,6 @@ namespace PlatformCharacterController
                 SceneManager.LoadScene(scenename);
             }
         }
+        
     }
 }

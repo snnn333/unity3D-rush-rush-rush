@@ -14,6 +14,8 @@ public class ItemOnWorld : MonoBehaviour
         // If we don't have this item
         // We need to iterate to find empty position
         if(other.gameObject.CompareTag("Player")){
+            StatisticManager.AddItem(thisItem.name, Time.time);
+            
             if(thisItem.name == "Bread"){
                 Health health = other.gameObject.GetComponent<Health>();
                 if(health.maxHealth > health.currentHealth){

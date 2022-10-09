@@ -138,6 +138,8 @@ namespace PlatformCharacterController
         public float previousY = 0f;
 
         public Health health;
+
+        public GameObject gamePassObj;
         
         private void Awake()
         {
@@ -158,7 +160,7 @@ namespace PlatformCharacterController
 
         private void Update()
         {
-            if (health.currentHealth <= 0)
+            if (health.currentHealth <= 0 || gamePassObj != null && gamePassObj.activeInHierarchy)
             {
                 return;
             }
