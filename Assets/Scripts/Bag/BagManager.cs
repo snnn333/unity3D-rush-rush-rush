@@ -25,6 +25,18 @@ public class BagManager : MonoBehaviour
         }
 
         instance = this;
+
+    }
+
+    // private void Start()
+    // {
+    //     ResetBag();
+    // }
+
+    private void ResetBag(){
+        Debug.Log("reset bag");
+        myBag.ResetBag();
+        RefreshItem();
     }
 
     private void OnEnable()
@@ -55,6 +67,13 @@ public class BagManager : MonoBehaviour
     // Call this function to update UI on bag
     public static void RefreshItem()
     {
+        // remove item with count 0
+        for (int i = 0; i < instance.myBag.itemList.Count; i++)
+        {
+            if(instance.myBag.itemList[i] != null && instance.myBag.itemList[i].num == 0){
+                instance.myBag.itemList[i] = null;
+            }
+        }
         // Destroy all UI bag item
         for (int i = 0; i < instance.grid.transform.childCount; i++)
         {
