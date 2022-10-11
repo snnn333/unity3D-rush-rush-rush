@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour
     // step 3
     public Bag bag;
     public Item Key;
+    public GameObject TutorialKey;
 
     // step 4
     public GameObject BagButton;
@@ -19,8 +20,19 @@ public class TutorialManager : MonoBehaviour
     // step 7
     public GameObject Ice;
 
-    //step 8
+
+    // step 8
+    public Item Oil;
+    public Item RustedKey;
+
+    // step 11
+    public GameObject Cage;
+    
+    //step 12
     public float waitTime = 4f;
+
+
+
 
     private int popUpIndex = 0;
     private bool waiting = false;
@@ -42,12 +54,7 @@ public class TutorialManager : MonoBehaviour
     {
         for (int i = 0; i <popUpWindows.Length; i++){
             if(i == popUpIndex){
-                Debug.Log(i);
                 popUpWindows[popUpIndex].SetActive(true);
-                // foreach (Transform child in popUpWindows[popUpIndex].transform)
-                // {
-                //     child.gameObject.SetActive(true);
-                // }
                 for (int a = 0; a < popUpWindows[popUpIndex].transform.childCount; a++)
                 {
                     popUpWindows[popUpIndex].transform.GetChild(a).gameObject.SetActive(true);
@@ -65,7 +72,6 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         } else if(popUpIndex == 1){
-                        Debug.Log("1");
             if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) ||Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)){
                 if(!waiting){
                     StartCoroutine(waiter());
@@ -78,7 +84,7 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         } else if(popUpIndex == 3){
-            if(bag.ContainsItem(Key)){
+            if(bag.ContainsItem(Key) || TutorialKey == null){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
@@ -109,13 +115,36 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         } else if(popUpIndex == 8){
+            if(bag.ContainsItem(Oil) && bag.ContainsItem(RustedKey)){
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
+            }
+        } else if(popUpIndex == 9){
+            // enter backpack 
+            if(BagButton.GetComponent<ButtonPressed>().buttonPressed){
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
+            }
+        } else if(popUpIndex == 10){
+            if( bag.ContainsItem(Key)){
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
+            }
+        } else if(popUpIndex == 11){
+            if(Cage == null || !bag.ContainsItem(Key)){
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
+            }
+        } else if(popUpIndex == 12){
             // if(!waiting){
             //     StartCoroutine(waiter());
             // }
         } 
-        // else if(popUpIndex == 9){
-            
-        // }
+
     }
 
 
