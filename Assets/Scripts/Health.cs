@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
             Debug.Log("Player Died");
             gameOverObj.SetActive(true);
             StatisticManager.QuitAndSaveData();
-            Application.Quit();
+            // Application.Quit();
         }
     }
 
