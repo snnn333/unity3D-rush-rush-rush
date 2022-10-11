@@ -11,7 +11,7 @@ public class Notification : MonoBehaviour
 {
 
     public string message = "welcome";
-    public bool displayStr = true;
+    public bool displayStr = false;
     public GameObject notificationObject = null;
     public float disappearTime = 1;
     
@@ -35,7 +35,7 @@ public class Notification : MonoBehaviour
 
 
             }else{
-                notificationObject.SetActive (false);
+                notificationObject.SetActive(false);
             }
         }
         
