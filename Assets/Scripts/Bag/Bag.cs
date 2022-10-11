@@ -7,6 +7,11 @@ public class Bag : ScriptableObject
 {
     public List<Item> itemList = new List<Item>();
 
+    public void ResetBag(){
+        for (int i = 0; i < itemList.Count; i++){
+            itemList[i] = null;
+        }
+    }
 
     public bool ContainsItem(Item item){
         return itemList.Contains(item);
