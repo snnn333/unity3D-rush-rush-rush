@@ -32,30 +32,15 @@ public class InteractiveItem : MonoBehaviour
             }
             else{
                 Debug.Log("Item is consumable");
-                if(myBag.itemList.Contains(key) && key.num > 0){
+                var result = myBag.RemoveItem(key);
+                if(result){
                     DisplayMessage(successMessage);
                     Destroy(this.gameObject);
-                    if(key.num <= 1){
-                        key.num = 1;
-                        for (int i = 0; i < myBag.itemList.Count; i++){
-                            if(myBag.itemList[i] == key){
-                                myBag.itemList[i] = null;
-                                break;
-                            }
-                        }
-                
-                        // myBag.itemList.Remove(key);
-                    }else{
-                        key.num -= 1;
-                    }
                 }else{
-                    Debug.Log(failMessage);
                     DisplayMessage(failMessage);
                 }
             }
-            
         }
-        
     }
 
     private void DisplayMessage(string msg){

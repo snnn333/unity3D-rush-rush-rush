@@ -16,6 +16,7 @@ public class ItemOnWorld : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             StatisticManager.AddItem(thisItem.name, Time.time);
             
+            // consume bread
             if(thisItem.name == "Bread"){
                 Health health = other.gameObject.GetComponent<Health>();
                 if(health.maxHealth > health.currentHealth){
@@ -23,33 +24,13 @@ public class ItemOnWorld : MonoBehaviour
                     Destroy(this.gameObject);
                     return;
                 }
+            }else{
+                // add item
+                DisplayMessage(itemMessage + thisItem.name);
+                myBag.AddItem(thisItem);
+                Destroy(this.gameObject);
             }
-
-            DisplayMessage(itemMessage + thisItem.name);
-            if (!myBag.itemList.Contains(thisItem))
-            {
-                if (other.gameObject.CompareTag("Player"))
-                {
-
-                    for (int i = 0; i < myBag.itemList.Count; i++)
-                    {
-                        // Find empty grid
-                        if (myBag.itemList[i] == null)
-                        {
-                            myBag.itemList[i] = thisItem;
-                            myBag.itemList[i].num = 1;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                thisItem.num++;
-            }
-            Destroy(this.gameObject);
         }   
-        
     }
 
     private void DisplayMessage(string msg){
