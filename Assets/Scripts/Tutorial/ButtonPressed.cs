@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
  
 public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
  
-public bool buttonPressed;
+public bool buttonPressed = false;
  
 public void OnPointerDown(PointerEventData eventData){
      buttonPressed = true;

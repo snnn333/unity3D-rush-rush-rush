@@ -20,9 +20,10 @@ public class TutorialManager : MonoBehaviour
     public GameObject Ice;
 
     //step 8
-    public float waitTime = 10f;
+    public float waitTime = 4f;
 
     private int popUpIndex = 0;
+    private bool waiting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,40 +60,58 @@ public class TutorialManager : MonoBehaviour
         if(popUpIndex == 0){
 
             if(Input.GetKeyDown(KeyCode.Space)){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 1){
                         Debug.Log("1");
             if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) ||Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 2){
             if(Input.GetKeyDown(KeyCode.Space)){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 3){
             if(bag.ContainsItem(Key)){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 4){
             if(BagButton.GetComponent<ButtonPressed>().buttonPressed){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
             
         } else if(popUpIndex == 5){
             if(!bag.ContainsItem(Key)){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 6){
             if(bag.ContainsItem(Torch)){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 7){
             if(Ice == null){
-                popUpIndex++;
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
             }
         } else if(popUpIndex == 8){
-            StartCoroutine(waiter());
+            // if(!waiting){
+            //     StartCoroutine(waiter());
+            // }
         } 
         // else if(popUpIndex == 9){
             
@@ -103,7 +122,9 @@ public class TutorialManager : MonoBehaviour
     IEnumerator waiter()
     {
         //Wait for 1 seconds
+        waiting = true;
         yield return new WaitForSecondsRealtime(waitTime);
         popUpIndex++;
+        waiting = false;
     }
 }
