@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Proyecto26;
+using UnityEngine.SceneManagement;
 
 
 public class StatisticManager : MonoBehaviour
@@ -45,6 +46,7 @@ public class StatisticManager : MonoBehaviour
         public float lastLevelTime; // Time of last level started
         public float firstLevelTime; // Time span of first level
         public float totalTime;
+        public string sceneName;
 
         public List<Damage> damageList;
         public List<ItemData> itemDataList;
@@ -104,6 +106,7 @@ public class StatisticManager : MonoBehaviour
         //
         instance.statisticFile.totalTime = Time.time;
         instance.statisticFile.dateTime = DateTime.Now.ToString();
+        instance.statisticFile.sceneName = SceneManager.GetActiveScene().name;
         PostToDatabase();
         Debug.Log(instance.statisticFile.totalTime);
         // TODO: Return to main panel
