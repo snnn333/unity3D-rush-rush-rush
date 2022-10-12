@@ -316,6 +316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa82258e3ec25c44e9e6cb8da8fe96a0, type: 3}
+--- !u!1 &143946321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8821287431588681151, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+  m_PrefabInstance: {fileID: 200908486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &200908486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,7 +1094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   currentHealth: 6
-  gameOverObj: {fileID: 0}
+  gameOverObj: {fileID: 143946321}
 --- !u!114 &1043193856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510343788322462593, guid: 20905ea0c8b80f64684a29572d41bc75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1464884
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3510343788322462593, guid: 20905ea0c8b80f64684a29572d41bc75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2087,7 +2092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6120309089039622802, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6120309089039622802, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: m_LocalPosition.z
