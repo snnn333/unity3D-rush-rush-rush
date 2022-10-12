@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c27dc86aa86fd548a3ed78bfbe31b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: welcome
+  message: Welcome
   displayStr: 0
   notificationObject: {fileID: 3187462797713019614}
   disappearTime: 1
@@ -1783,6 +1783,7 @@ MonoBehaviour:
     lastLevelTime: 0
     firstLevelTime: 0
     totalTime: 0
+    sceneName: 
     damageList: []
     itemDataList: []
 --- !u!114 &8821287432858950960
@@ -1919,7 +1920,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8821287432858950960}
         m_TargetAssemblyTypeName: LocalSceneManager, Assembly-CSharp
-        m_MethodName: EnterMainScene
+        m_MethodName: EnterLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2051,7 +2052,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8821287432858950960}
         m_TargetAssemblyTypeName: LocalSceneManager, Assembly-CSharp
-        m_MethodName: EnterMainScene
+        m_MethodName: EnterLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2183,7 +2184,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8821287432858950960}
         m_TargetAssemblyTypeName: LocalSceneManager, Assembly-CSharp
-        m_MethodName: EnterMainScene
+        m_MethodName: EnterLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
