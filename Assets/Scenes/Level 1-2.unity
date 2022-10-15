@@ -6255,6 +6255,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 272576974640661468, guid: 20905ea0c8b80f64684a29572d41bc75, type: 3}
+      propertyPath: itemMessage
+      value: 'You picked up '
+      objectReference: {fileID: 0}
     - target: {fileID: 3510343788322462593, guid: 20905ea0c8b80f64684a29572d41bc75, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7587,6 +7591,10 @@ PrefabInstance:
     - target: {fileID: 1918084544445595890, guid: a0b4a66f5f2a7d8478796f0315d47a62, type: 3}
       propertyPath: m_Name
       value: RustedKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918084544445595893, guid: a0b4a66f5f2a7d8478796f0315d47a62, type: 3}
+      propertyPath: itemMessage
+      value: 'You picked up '
       objectReference: {fileID: 0}
     - target: {fileID: 8920301069159034488, guid: a0b4a66f5f2a7d8478796f0315d47a62, type: 3}
       propertyPath: m_RootOrder
