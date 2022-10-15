@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7664843817236548339}
   - component: {fileID: 7083703160298175009}
   - component: {fileID: 6780833056488889884}
+  - component: {fileID: 5126591265479050632}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisItem: {fileID: 11400000, guid: 5a83e2af7573fce48bb0ed0129788566, type: 2}
   myBag: {fileID: 11400000, guid: 6873874353f216246b12c19047143efd, type: 2}
+  itemMessage: 'You picked up '
 --- !u!65 &6780833056488889884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,3 +114,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 6.3868465, z: 2}
   m_Center: {x: 0, y: 0.32856727, z: 0}
+--- !u!114 &5126591265479050632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168969691714579238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a22f6efdc2125c40a9288d8c18e1f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  banner: {fileID: 7931308217364831254, guid: b80e3ff6742dfa24d887b0329129876e, type: 3}
+  item: {fileID: 11400000, guid: 5a83e2af7573fce48bb0ed0129788566, type: 2}
+  itemName: 
+  offsetY: 1.5
