@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6127235682197064300}
   - component: {fileID: 6127235682197064301}
   - component: {fileID: 2345415662781503888}
+  - component: {fileID: -1862622194868595062}
   m_Layer: 0
   m_Name: Pickable Key
   m_TagString: Untagged
@@ -78,6 +79,22 @@ MonoBehaviour:
   thisItem: {fileID: 11400000, guid: 8ef41e24db99c044fbd487defaffd65a, type: 2}
   myBag: {fileID: 11400000, guid: 6873874353f216246b12c19047143efd, type: 2}
   itemMessage: 'You picked up '
+--- !u!114 &-1862622194868595062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6127235682197064297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a22f6efdc2125c40a9288d8c18e1f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  banner: {fileID: 7931308217364831254, guid: b80e3ff6742dfa24d887b0329129876e, type: 3}
+  item: {fileID: 11400000, guid: 8ef41e24db99c044fbd487defaffd65a, type: 2}
+  itemName: 
+  offsetY: 1.5
 --- !u!1001 &526451936907753581
 PrefabInstance:
   m_ObjectHideFlags: 0
