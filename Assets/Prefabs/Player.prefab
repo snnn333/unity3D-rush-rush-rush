@@ -955,14 +955,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf897e62590c8448bba761e6cca19ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 5
+  RunningSpeed: 8
   SlopeLimit: 45
   SlideFriction: 0.3
   Gravity: -30
   MaxDownYVelocity: 15
   CanControl: 1
   CanJump: 1
-  JumpHeight: 2
+  JumpHeight: 2.5
   CanDoubleJump: 1
   CanDash: 1
   DashCooldown: 1
@@ -988,6 +988,11 @@ MonoBehaviour:
   SlowFallObject: {fileID: 4560593131938697844}
   PlayerInputs: {fileID: 4529621896906988374}
   CurrentActivePlatform: {fileID: 0}
+  Health: {fileID: 0}
+  fallThreshold: 5
+  previousY: 0
+  health: {fileID: 0}
+  gamePassObj: {fileID: 0}
 --- !u!114 &4530388500854772472
 MonoBehaviour:
   m_ObjectHideFlags: 0

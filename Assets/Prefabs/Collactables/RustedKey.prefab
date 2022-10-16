@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 174227257915362995}
   - component: {fileID: 1918084544445595892}
   - component: {fileID: 1918084544445595893}
+  - component: {fileID: 5387224467984185114}
   m_Layer: 0
   m_Name: RustedKey
   m_TagString: Untagged
@@ -111,3 +112,19 @@ MonoBehaviour:
   thisItem: {fileID: 11400000, guid: 7af0afe6a9f6b7b4ebbb83274ad07e30, type: 2}
   myBag: {fileID: 11400000, guid: 6873874353f216246b12c19047143efd, type: 2}
   itemMessage: You picked up
+--- !u!114 &5387224467984185114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918084544445595890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c95245d6d228914eb0543f55e6b8bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 50
+  moveSpeed: 1
+  moveDistance: 0.1
+  startPosition: {x: 0, y: 0, z: 0}

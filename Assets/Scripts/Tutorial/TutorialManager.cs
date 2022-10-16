@@ -66,7 +66,7 @@ public class TutorialManager : MonoBehaviour
 
         if(popUpIndex == 0){
 
-            if(Input.GetKeyDown(KeyCode.Space)){
+            if(Input.anyKey){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
