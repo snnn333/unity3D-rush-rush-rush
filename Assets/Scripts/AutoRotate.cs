@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AutoRotate : MonoBehaviour
 {
-    public float rotateSpeed = 2f;
-    public int moveSpeed = 10;
-    public float moveDistance = 0.5f;
+    public float rotateSpeed = 50f;
+    public int moveSpeed = 1;
+    public float moveDistance = 0.1f;
     private int clock = 0;
     public Vector3 startPosition;
     
