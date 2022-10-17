@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &180470910901570214
 MonoBehaviour:
@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def24135fee7dc64a8a3daf7a820c5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePassObj: {fileID: 0}
   scenename: Level 1
 --- !u!1 &181289558572168131
 GameObject:
