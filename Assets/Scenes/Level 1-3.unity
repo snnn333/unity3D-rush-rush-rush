@@ -361,7 +361,7 @@ MonoBehaviour:
   speed: 5
   m_StartPosition: {x: 0, y: 0, z: 0}
   follow_distance: 15
-  lifeTime: 5
+  lifeTime: 10
   waitTime: 1
   msg: Box destroyed by cannon!
 --- !u!4 &56748978 stripped
@@ -3217,7 +3217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.036026
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3225,7 +3225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -2.2124023
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9768,7 +9768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1135891767}
-  speed: 6
+  speed: 5
   m_StartPosition: {x: 0, y: 0, z: 0}
   follow_distance: 10
   lifeTime: 5
@@ -11036,7 +11036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.036026
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11044,7 +11044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.21240234
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11256,7 +11256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1135891767}
-  speed: 6
+  speed: 5
   m_StartPosition: {x: 0, y: 0, z: 0}
   follow_distance: 10
   lifeTime: 5
@@ -15058,7 +15058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5349521768781423387, guid: 63fa1e82e6f53fd48afd849d83a62b78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20392,7 +20392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1135891767}
-  speed: 6
+  speed: 5
   m_StartPosition: {x: 0, y: 0, z: 0}
   follow_distance: 10
   lifeTime: 5
@@ -21436,7 +21436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1135891767}
-  speed: 6
+  speed: 5
   m_StartPosition: {x: 0, y: 0, z: 0}
   follow_distance: 10
   lifeTime: 5
