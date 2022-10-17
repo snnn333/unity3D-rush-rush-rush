@@ -180,12 +180,12 @@ namespace PlatformCharacterController
                 {
                     // check if the player is falling a certain distance
                     // if so, do damage
-                    if (previousY - _characterTransform.position.y > 5f)
-                    {
-                        Debug.Log("Fell from a great height");
-                        int damage = 1;
-                        GameObject.Find("Player").GetComponent<Health>().TakeDamage("Fall", damage);    
-                    }
+                    // if (previousY - _characterTransform.position.y > 5f)
+                    // {
+                    //     Debug.Log("Fell from a great height");
+                    //     int damage = 1;
+                    //     GameObject.Find("Player").GetComponent<Health>().TakeDamage("Fall", damage);    
+                    // }
                     
                     
                     // int damage = 1;

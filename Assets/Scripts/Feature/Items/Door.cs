@@ -8,6 +8,11 @@ public class Door : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        // Disable player's movement
+        GameObject player = GameObject.FindWithTag("Player");
+        (player.GetComponent("MovementCharacterController") as MonoBehaviour).enabled = false;
+
+        // Display the win screen
         gamePassObj.SetActive(true);
     }
 }
