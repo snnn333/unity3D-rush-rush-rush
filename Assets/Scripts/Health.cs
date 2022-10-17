@@ -32,6 +32,10 @@ public class Health : MonoBehaviour
             Debug.Log("Player Died");
             gameOverObj.SetActive(true);
             StatisticManager.QuitAndSaveData();
+
+            // Disable player's movement
+            GameObject player = GameObject.FindWithTag("Player");
+            (player.GetComponent("MovementCharacterController") as MonoBehaviour).enabled = false;
             // Application.Quit();
         }
     }
