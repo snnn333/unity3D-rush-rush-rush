@@ -43,8 +43,6 @@ public class StatisticManager : MonoBehaviour
         public string dateTime; // End date time, primary key to identify this game.
         public int healthReduction; // Total health reduction
         public int healthGained; // Total health gained
-        public float lastLevelTime; // Time of last level started
-        public float firstLevelTime; // Time span of first level
         public float totalTime;
         public string sceneName;
 
@@ -70,12 +68,18 @@ public class StatisticManager : MonoBehaviour
         
         statisticFile.healthReduction = 0;
         statisticFile.healthGained = 0;
-        statisticFile.lastLevelTime = Time.time;
-        statisticFile.firstLevelTime = Time.time;
         statisticFile.damageList = new List<Damage>();
         statisticFile.itemDataList = new List<ItemData>();
     }
 
+    public static void ResetData()
+    {
+        instance.statisticFile.damageList.Clear();
+        instance.statisticFile.itemDataList.Clear();
+        instance.statisticFile.healthReduction = 0;
+        instance.statisticFile.healthGained = 0;
+    }
+    
     public static void AddHealthReduction(string sourceName, int addNum)
     {
         Damage damage = new Damage(sourceName, addNum);
@@ -104,11 +108,17 @@ public class StatisticManager : MonoBehaviour
     {
         // Save Data
         //
+        if (SceneManager.GetActiveScene().name == "Start")
+        {
+            return;
+        }
         instance.statisticFile.totalTime = Time.time;
         instance.statisticFile.dateTime = DateTime.Now.ToString();
         instance.statisticFile.sceneName = SceneManager.GetActiveScene().name;
         PostToDatabase();
         Debug.Log(instance.statisticFile.totalTime);
         // TODO: Return to main panel
+
+        ResetData();
     }
 }

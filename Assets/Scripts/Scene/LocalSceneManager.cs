@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class LocalSceneManager : MonoBehaviour
     
     public static void EnterLevelSelection()
     {
+        StatisticManager.QuitAndSaveData();
         SceneManager.LoadScene("Level Selector");
     }
 
