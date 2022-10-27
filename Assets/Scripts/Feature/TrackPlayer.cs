@@ -16,6 +16,9 @@ public class TrackPlayer : MonoBehaviour
     // Stop tracking the player within this distance, so player can take action to dodge the bullet
     public float lifeTime = 10f;
     public float waitTime = 2f;
+
+    [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
+
     private Vector3 m_Direction;
     private Quaternion m_Rotation;
     // Whether the bullet is tracking the player
@@ -23,7 +26,7 @@ public class TrackPlayer : MonoBehaviour
     // Whether the bullet is moving or sleeping
     private bool isMoving = true;
 
-    public string msg = "Wall destroyed by cannon!";
+    public string msg = "Box destroyed by cannon!";
     // public Enums.Directions useSide = Enums.Directions.Up;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,7 @@ public class TrackPlayer : MonoBehaviour
     IEnumerator WaitThenDie()
     {
         // The bullet can survive at most the life time, afterward the bullet will reset to the original position
-        yield return new WaitForSeconds(lifeTime);
+        yield return new WaitForSeconds(lifeTime + waitTime);
         resetItem();
     }
 
@@ -82,6 +85,10 @@ public class TrackPlayer : MonoBehaviour
     }
 
     private void resetItem(){
+        if (TeleportEffect)
+            {
+                Instantiate(TeleportEffect, transform.position, transform.rotation);
+            }
         isTracking = false;
         StopAllCoroutines();
         transform.position = m_StartPosition;
