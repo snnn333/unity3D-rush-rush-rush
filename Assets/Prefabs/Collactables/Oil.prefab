@@ -247,9 +247,9 @@ GameObject:
   - component: {fileID: 3510343788322462593}
   - component: {fileID: 511409825783649316}
   - component: {fileID: 2376796483164463342}
-  - component: {fileID: 272576974640661469}
   - component: {fileID: 272576974640661468}
   - component: {fileID: 119386947785483103}
+  - component: {fileID: 2147732705060856460}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -322,19 +322,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &272576974640661469
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4322593346872000827}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0042027575, y: 0.004202758, z: 0.014281282}
-  m_Center: {x: 0.000027749807, y: 0.000029712759, z: 0.007140656}
 --- !u!114 &272576974640661468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +353,19 @@ MonoBehaviour:
   moveSpeed: 1
   moveDistance: 0.1
   startPosition: {x: 0, y: 0, z: 0}
+--- !u!135 &2147732705060856460
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322593346872000827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.010140641
+  m_Center: {x: 0.000027749807, y: 0.000029682957, z: 0.007140641}
 --- !u!1 &6828153026738907437
 GameObject:
   m_ObjectHideFlags: 0

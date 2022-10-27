@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8821287433384999132, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnterMainScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
 --- !u!1 &1484028640
@@ -1081,7 +1085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949380609000483300, guid: f6e3d807a0e2cf743943383fea9b13ff, type: 3}
       propertyPath: scenename
-      value: Level 1-3
+      value: Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e3d807a0e2cf743943383fea9b13ff, type: 3}
@@ -1292,7 +1296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8949380609000483300, guid: f6e3d807a0e2cf743943383fea9b13ff, type: 3}
       propertyPath: scenename
-      value: Level 1-2
+      value: Level 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e3d807a0e2cf743943383fea9b13ff, type: 3}

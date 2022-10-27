@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8920301069159034488}
   - component: {fileID: 753088342078026497}
   - component: {fileID: 174227257915362995}
-  - component: {fileID: 1918084544445595892}
   - component: {fileID: 1918084544445595893}
   - component: {fileID: 5387224467984185114}
+  - component: {fileID: 2107323534019216141}
   m_Layer: 0
   m_Name: RustedKey
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1918084544445595892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918084544445595890}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.070726, y: 130.97888, z: 52.851837}
-  m_Center: {x: -0.00000014557713, y: 2.442379, z: -0.57945347}
 --- !u!114 &1918084544445595893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +115,16 @@ MonoBehaviour:
   moveSpeed: 1
   moveDistance: 0.1
   startPosition: {x: 0, y: 0, z: 0}
+--- !u!135 &2107323534019216141
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918084544445595890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 65.48944
+  m_Center: {x: -0.00000014557713, y: 2.442379, z: -0.57945347}
