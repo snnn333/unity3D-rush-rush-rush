@@ -7807,6 +7807,7 @@ MonoBehaviour:
   sleepSeconds: 2
   maxDistance: 10
   StartPosition: {fileID: 0}
+  TeleportEffect: {fileID: 0}
 --- !u!65 &1729092601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9017,6 +9018,10 @@ PrefabInstance:
     - target: {fileID: 4425375142863138173, guid: 7171e886d7841084e8086bcc1af8ff30, type: 3}
       propertyPath: m_Name
       value: Land (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425375142863138173, guid: 7171e886d7841084e8086bcc1af8ff30, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7171e886d7841084e8086bcc1af8ff30, type: 3}
