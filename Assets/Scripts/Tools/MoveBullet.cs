@@ -12,6 +12,8 @@ public class MoveBullet : MonoBehaviour
 
     public Transform StartPosition = null;
 
+    [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
+
     private Vector3 m_StartPosition;
     private bool IsMoving = false;
    
@@ -45,6 +47,12 @@ public class MoveBullet : MonoBehaviour
     }
 
     private void Reset() {
+        // Display the smoke effect when the bullet explodes
+        if (TeleportEffect)
+        {
+            Instantiate(TeleportEffect, transform.position, transform.rotation);
+        }
+
         // Reset to the original position
         if (StartPosition == null) {
             transform.position = m_StartPosition;
@@ -57,15 +65,9 @@ public class MoveBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cannon Receiver") || Vector3.Distance(m_StartPosition, transform.position) >= maxDistance)
+        if (other.CompareTag("Cannon Receiver"))
         {
-            
-        }
-        else{
-            // transform.position = m_StartPosition;
-            // IsMoving = false;
-            // sleepSeconds = 0.5f;
-            // StartCoroutine(waiter());
+            Reset();
         }
     }
 }

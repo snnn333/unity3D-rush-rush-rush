@@ -24,16 +24,18 @@ public class MoveTransportPlatform : MonoBehaviour
             transform.position += m_Direction * m_Speed;
         }
 
-        if (IsMoving && Vector3.Distance(m_StartPosition, transform.position) > MoveDistance) {
-            IsMoving = false;
+        // Switch the moving direction after reaching the terminal
+        if (Vector3.Distance(m_StartPosition, transform.position) >= MoveDistance) {
+            m_Direction = m_Direction * -1;
+            m_StartPosition = transform.position;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && IsMoving == false)
         {
-            StartCoroutine(waiter());
+            IsMoving = true;
         }
     }
 
