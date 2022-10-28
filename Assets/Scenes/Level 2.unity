@@ -2289,7 +2289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a723dd0fb975a4bb49f2e645bf32d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 0.05
+  m_Speed: 0.1
   m_Direction: {x: 1, y: 0, z: 0}
   MoveDistance: 25
 --- !u!65 &241491721
@@ -2422,7 +2422,7 @@ GameObject:
   - component: {fileID: 248854474}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Cannon Receiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3173,7 +3173,7 @@ GameObject:
   - component: {fileID: 284312280}
   m_Layer: 0
   m_Name: default (4)
-  m_TagString: Untagged
+  m_TagString: Cannon Receiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5580,7 +5580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459426520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.5, y: 6, z: 179.5}
+  m_LocalPosition: {x: 76, y: 6, z: 178.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1683158952}
@@ -6314,6 +6314,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 951476173}
     m_Modifications:
+    - target: {fileID: 4707815572598731930, guid: abd017aab5c424f4784352386acb0d54, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     - target: {fileID: 5590353073977212801, guid: abd017aab5c424f4784352386acb0d54, type: 3}
       propertyPath: m_Name
       value: Gate (1)
@@ -7057,7 +7061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2672
+      value: 4.9999995
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7065,7 +7069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.1373
+      value: -24.500002
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11130,7 +11134,7 @@ GameObject:
   - component: {fileID: 951476173}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Cannon Receiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11577,7 +11581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.7876
+      value: 31.787601
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12083,7 +12087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.5
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13226,7 +13230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14041,6 +14045,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 248854474}
     m_Modifications:
+    - target: {fileID: 4707815572598731930, guid: abd017aab5c424f4784352386acb0d54, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     - target: {fileID: 5590353073977212801, guid: abd017aab5c424f4784352386acb0d54, type: 3}
       propertyPath: m_Name
       value: Gate
@@ -16163,7 +16171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17156,7 +17164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17164,7 +17172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -76
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 1717489390902614468, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17355,7 +17363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17363,7 +17371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3052327419429658705, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18252,7 +18260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547616190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.5, y: 2.5, z: 138.5}
+  m_LocalPosition: {x: 55, y: 2.5, z: 137.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1136944942}
@@ -20007,6 +20015,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1136944942}
     m_Modifications:
+    - target: {fileID: 4707815572598731930, guid: abd017aab5c424f4784352386acb0d54, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     - target: {fileID: 5590353073977212801, guid: abd017aab5c424f4784352386acb0d54, type: 3}
       propertyPath: m_Name
       value: Gate (1)

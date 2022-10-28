@@ -35,7 +35,7 @@ public class MoveTransportPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player") && IsMoving == false)
         {
-            StartCoroutine(waiter());
+            IsMoving = true;
         }
     }
 
