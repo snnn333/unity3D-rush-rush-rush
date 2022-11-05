@@ -4935,6 +4935,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5590353073977212806, guid: abd017aab5c424f4784352386acb0d54, type: 3}
   m_PrefabInstance: {fileID: 1203886189}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &396282973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2109707590695136987, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
+  m_PrefabInstance: {fileID: 928092019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &396282978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396282973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d28cb150ad86f4a8100312a4aea7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uvAnimationRate: {x: 0.06, y: 0}
+  textureName: _LavaTex
 --- !u!1001 &397102315
 PrefabInstance:
   m_ObjectHideFlags: 0
