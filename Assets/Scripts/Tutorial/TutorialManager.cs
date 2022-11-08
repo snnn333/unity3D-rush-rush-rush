@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject Cage;
     
     //step 12
-    public float waitTime = 4f;
+    public float waitTime = 0.1f;
 
 
 
@@ -66,7 +66,7 @@ public class TutorialManager : MonoBehaviour
 
         if(popUpIndex == 0){
 
-            if(Input.anyKey){
+            if(Input.GetKeyDown(KeyCode.Return)){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
@@ -90,61 +90,27 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         } else if(popUpIndex == 4){
-            if(BagButton.GetComponent<ButtonPressed>().buttonPressed){
+            if(!bag.ContainsItem(Key)){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
             }
             
         } else if(popUpIndex == 5){
-            if(!bag.ContainsItem(Key)){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 6){
             if(bag.ContainsItem(Torch)){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
             }
-        } else if(popUpIndex == 7){
+        } else if(popUpIndex == 6){
             if(Ice == null){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
             }
-        } else if(popUpIndex == 8){
-            if(bag.ContainsItem(Oil) && bag.ContainsItem(RustedKey)){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 9){
-            // enter backpack 
-            if(BagButton.GetComponent<ButtonPressed>().buttonPressed){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 10){
-            if( bag.ContainsItem(Key)){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 11){
-            if(Cage == null || !bag.ContainsItem(Key)){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 12){
-            // if(!waiting){
-            //     StartCoroutine(waiter());
-            // }
+        } else if(popUpIndex == 7){
+            
         } 
-
     }
 
 
