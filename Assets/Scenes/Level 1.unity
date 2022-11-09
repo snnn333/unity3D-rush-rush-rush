@@ -4458,6 +4458,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7c9fb993626aaf8488be64eb9feadbbc, type: 3}
+      propertyPath: uvAnimationRate.x
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c9fb993626aaf8488be64eb9feadbbc, type: 3}
 --- !u!4 &1029679240 stripped
@@ -5143,7 +5147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8cd5bd96dbc24d66bd75b35866c895e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 6
   currentHealth: 0
   gameOverObj: {fileID: 848258061}
 --- !u!54 &1135891769
@@ -6247,7 +6251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d28cb150ad86f4a8100312a4aea7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uvAnimationRate: {x: 0.06, y: 0}
+  uvAnimationRate: {x: 0.02, y: 0}
   textureName: _LavaTex
 --- !u!4 &1374125112 stripped
 Transform:
