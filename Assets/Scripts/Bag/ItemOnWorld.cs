@@ -15,10 +15,12 @@ public class ItemOnWorld : MonoBehaviour
         // We need to iterate to find empty position
         if(other.gameObject.CompareTag("Player")){
 
-            AddPopup(other);
-            if(Input.GetKeyDown(KeyCode.E)){
-                AddItem(other);
-            }
+            // AddPopup(other);
+            // if(Input.GetKeyDown(KeyCode.E)){
+            //     AddItem(other);
+            // }
+            AddItem(other);
+            
             // StatisticManager.AddItem(thisItem.name, Time.time);
             
             // // consume bread
