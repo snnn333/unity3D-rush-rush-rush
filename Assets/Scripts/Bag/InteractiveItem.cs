@@ -12,9 +12,11 @@ public class InteractiveItem : MonoBehaviour
     public int colliderId;
     public Bag myBag;
     public Item key;
+    public int cost = 1; // number of item to deduct from item number.
     public bool consumable = true;
     public string failMessage = "Needs key to open door";
     public string successMessage = "You opened the door!";
+    
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
@@ -32,7 +34,7 @@ public class InteractiveItem : MonoBehaviour
             }
             else{
                 Debug.Log("Item is consumable");
-                var result = myBag.RemoveItem(key);
+                var result = myBag.RemoveMultipleItem(key,cost);
                 if(result){
                     DisplayMessage(successMessage);
                     Destroy(this.gameObject);
