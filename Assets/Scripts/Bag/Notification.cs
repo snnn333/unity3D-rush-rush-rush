@@ -31,7 +31,7 @@ public class Notification : MonoBehaviour
 
         if(notificationObject != null){
             if(displayStr){
-                StartCoroutine(ShowMessage());
+                // StartCoroutine(ShowMessage());
 
 
             }else{
