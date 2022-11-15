@@ -29,12 +29,19 @@ public class TrackPlayer : MonoBehaviour
     public string msg = "Box destroyed by cannon!";
     // public Enums.Directions useSide = Enums.Directions.Up;
     // Start is called before the first frame update
+    
+    public AudioSource audioSource;
+    public AudioClip explodeClip;
+    
     void Start()
     {
         m_StartPosition = transform.position;
         m_Rotation = transform.rotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, m_Rotation, Time.time * 1000f);
         Player = GameObject.FindWithTag("Player");
+        audioSource = gameObject.GetComponent<AudioSource>();
+        explodeClip = Resources.Load<AudioClip>("Audio/explode");
+        audioSource.clip = explodeClip;
     }
 
     IEnumerator WaitThenDie()
@@ -101,6 +108,7 @@ public class TrackPlayer : MonoBehaviour
     {
         if(other.gameObject.tag == "Destroyable"){
             Debug.Log("destroy object");
+            audioSource.Play();
             Destroy(other.gameObject);
             DisplayMessage(msg);
             resetItem();

@@ -34,6 +34,9 @@ namespace PlatformCharacterController
 
                 // Minus one live after the player hitting the lava or the enemy
                 GameObject.Find("Player").GetComponent<Health>().TakeDamage("Teleport", 1);
+                
+                TeleportPosition.position =
+                    other.GetComponent<MovementCharacterController>().checkPointObj.transform.position;
 
                 StartCoroutine(other.GetComponent<MovementCharacterController>()
                     .DeactivatePlayerControlByTime(TimeToControlPlayer));
