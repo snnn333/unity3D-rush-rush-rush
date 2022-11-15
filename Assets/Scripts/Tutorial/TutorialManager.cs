@@ -32,6 +32,10 @@ public class TutorialManager : MonoBehaviour
     public float waitTime = 0.1f;
 
 
+    // CoinDoor
+    public GameObject coinDoor;
+
+
 
 
     private int popUpIndex = 0;
@@ -109,6 +113,12 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         } else if(popUpIndex == 7){
+            if(coinDoor == null){
+                if(!waiting){
+                    StartCoroutine(waiter());
+                }
+            }
+        } else if(popUpIndex == 8){
             
         } 
     }
