@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LocalSceneManager : MonoBehaviour
 {
-    private static LocalSceneManager instance;
+    public Bag bag;
+
+    private LocalSceneManager instance;
+    
     
     private void Awake()
     {
@@ -18,20 +21,30 @@ public class LocalSceneManager : MonoBehaviour
         instance = this;
     }
 
-    public static void EnterLevel1()
+    void EnterLevel1()
     {
+        if(bag != null){
+            bag.ResetBag();
+        }
         SceneManager.LoadScene("Level 1");
     }
     
-    public static void EnterLevelSelection()
+    void EnterLevelSelection()
     {
         StatisticManager.QuitAndSaveData();
+        if(bag != null){
+            bag.ResetBag();
+        }
         SceneManager.LoadScene("Level Selector");
     }
 
-    public static void EnterMainScene()
+    void EnterMainScene()
     {
+        
         StatisticManager.QuitAndSaveData();
+        if(bag != null){
+            bag.ResetBag();
+        }
         SceneManager.LoadScene("Start");
     }
 }
