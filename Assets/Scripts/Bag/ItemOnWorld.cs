@@ -7,6 +7,7 @@ public class ItemOnWorld : MonoBehaviour
 {
     public Item thisItem;
     public Bag myBag;
+    public bool hasMessage = true;
     public string itemMessage = "You picked up ";
 
     private void OnTriggerEnter(Collider other)
@@ -65,7 +66,10 @@ public class ItemOnWorld : MonoBehaviour
             }
         }else{
             // add item
-            DisplayMessage(itemMessage + thisItem.name);
+            if (hasMessage) {
+                DisplayMessage(itemMessage + thisItem.name);
+            }
+            
             myBag.AddItem(thisItem);
             Destroy(this.gameObject);
         }
