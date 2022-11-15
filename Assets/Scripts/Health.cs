@@ -7,11 +7,17 @@ public class Health : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth;
     public GameObject gameOverObj;
+
+    public AudioSource audioSource;
+    public AudioClip deadClip;
     
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        audioSource = gameObject.GetComponent<AudioSource>();
+        deadClip = Resources.Load<AudioClip>("Audio/dead");
+        audioSource.clip = deadClip;
     }
 
     // Update Health
@@ -19,10 +25,12 @@ public class Health : MonoBehaviour
     {
         StatisticManager.AddHealthReduction(sourceName, health);
         
+        
         currentHealth -= health;
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+            //audioSource.clip = deadClip;
         }
         if (currentHealth <= 0)
         {
@@ -37,6 +45,10 @@ public class Health : MonoBehaviour
             GameObject player = GameObject.FindWithTag("Player");
             (player.GetComponent("MovementCharacterController") as MonoBehaviour).enabled = false;
             // Application.Quit();
+        }
+        else
+        {
+            audioSource.Play();
         }
     }
 
