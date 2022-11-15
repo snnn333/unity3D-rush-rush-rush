@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
     //观察目标
     public Transform Target;
     //观察距离
-    public float Distance = 25F;
+    public float Distance = 35F;
     //旋转速度
     private float SpeedX = 240;
     private float SpeedY = 120;
@@ -16,7 +16,7 @@ public class CameraControl : MonoBehaviour
 
     //旋转角度
     public float RotateX = 0.0F;
-    public float RotateY = 45.0F;
+    public float RotateY = 30.0F;
 
     //鼠标缩放距离最值
     private float MaxDistance = 100;
@@ -25,7 +25,7 @@ public class CameraControl : MonoBehaviour
     private float ZoomSpeed = 2F;
 
     //是否启用差值
-    public bool isNeedDamping = true;
+    public bool isNeedDamping = false;
     //速度
     public float Damping = 10F;
 
