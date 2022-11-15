@@ -42,7 +42,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2500038, y: 2.094437, z: 0.6393936}
+  m_Size: {x: 10, y: 2.094437, z: 10}
   m_Center: {x: 0.37500226, y: 1.0472187, z: -0.010708302}
 --- !u!114 &7450149376364431445
 MonoBehaviour:
@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActived: 0
+  disabledMaterial: {fileID: -5243988174349660497, guid: 4b8e97e9b9623c942bb52651a13d8ecb, type: 3}
 --- !u!1001 &5031848758581229491
 PrefabInstance:
   m_ObjectHideFlags: 0
