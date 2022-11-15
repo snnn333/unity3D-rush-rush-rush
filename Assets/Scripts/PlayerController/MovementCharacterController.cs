@@ -140,6 +140,8 @@ namespace PlatformCharacterController
         public Health health;
 
         public GameObject gamePassObj;
+
+        public GameObject checkPointObj;
         
         private void Awake()
         {
