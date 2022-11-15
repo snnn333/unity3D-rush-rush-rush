@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public GameObject gamePassObj;
+    public Bag bag;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,11 @@ public class Door : MonoBehaviour
 
         // Display the win screen
         gamePassObj.SetActive(true);
+
+        // empty backpack
+        if(bag != null){
+            bag.ResetBag();
+        }
 
         // Disable exit and bag button
         GameObject exitButton = GameObject.FindWithTag("ExitButton");
