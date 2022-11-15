@@ -14,5 +14,12 @@ public class Door : MonoBehaviour
 
         // Display the win screen
         gamePassObj.SetActive(true);
+
+        // Disable exit and bag button
+        GameObject exitButton = GameObject.FindWithTag("ExitButton");
+        exitButton.SetActive(false);
+
+        GameObject bagButton = GameObject.FindWithTag("BagButton");
+        bagButton.SetActive(false);
     }
 }
