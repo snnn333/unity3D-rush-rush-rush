@@ -11,6 +11,8 @@ public class CheckPoint : MonoBehaviour
     // Change the material when the player 
     public Material disabledMaterial;
     private Material enabledMaterial;
+    // VFX
+    public GameObject myVFX;
     private Renderer renderer;
 
     public void Start()
@@ -26,6 +28,12 @@ public class CheckPoint : MonoBehaviour
     {
         isActived = false;
     }
+
+    private void SpawnEffect()
+    {
+        GameObject spawnedVFX = Instantiate(myVFX, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject; Destroy(spawnedVFX, 5f);
+        Destroy(spawnedVFX, 5f);
+    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -36,6 +44,8 @@ public class CheckPoint : MonoBehaviour
             isActived = true;
             // Enable material
             renderer.material = enabledMaterial;
+            // VFX
+            SpawnEffect();
         }
     }
 }

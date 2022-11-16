@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2355910}
   - component: {fileID: 11457130}
   - component: {fileID: 2371913662055103433}
+  - component: {fileID: 2063799701855048984}
   m_Layer: 0
   m_Name: Lava_diffuse
   m_TagString: Untagged
@@ -113,3 +114,17 @@ MonoBehaviour:
   TimeToControlPlayer: 0.5
   TeleportEffect: {fileID: 1451354923681886, guid: d2c6feae2c3c4d74c8e1e3553d99644e, type: 3}
   TeleportPosition: {fileID: 0}
+--- !u!64 &2063799701855048984
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

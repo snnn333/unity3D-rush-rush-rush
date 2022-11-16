@@ -9,6 +9,14 @@ public class ItemOnWorld : MonoBehaviour
     public Bag myBag;
     public bool hasMessage = true;
     public string itemMessage = "You picked up ";
+    // VFX
+    public GameObject myVFX;
+
+    private void SpawnEffect()
+    {
+        GameObject spawnedVFX = Instantiate(myVFX, transform.position, transform.rotation) as GameObject; 
+        Destroy(spawnedVFX, 5f);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +29,9 @@ public class ItemOnWorld : MonoBehaviour
             //     AddItem(other);
             // }
             AddItem(other);
+
+            // VFX
+            SpawnEffect();
             
             // StatisticManager.AddItem(thisItem.name, Time.time);
             
