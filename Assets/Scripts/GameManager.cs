@@ -21,9 +21,8 @@ public class GameManager : MonoBehaviour
 
     public static void passLevel(int level){
         Debug.Log("level pass");
-        if(level >= GameManager.levelPassed){
-            GameManager.levelPassed += 1;
-        }
+        // Point to the next level
+        GameManager.levelPassed = level + 1;
     }
 
     // Update level select scene
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }else{
-                    levels[i].SetActive(false);
+                    levels[i].SetActive(true);
                 }
             }
         }
