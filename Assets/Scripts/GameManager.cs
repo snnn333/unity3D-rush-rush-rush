@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }else{
-                    levels[i].SetActive(false);
+                    levels[i].SetActive(true);
                 }
             }
         }
