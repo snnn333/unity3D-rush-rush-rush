@@ -21,7 +21,7 @@ namespace PlatformCharacterController
             yield return new WaitForSeconds(StartTeleport);
             if (TeleportEffect)
             {
-                Instantiate(TeleportEffect, player.position, player.rotation);
+                //Instantiate(TeleportEffect, player.position, player.rotation);
             }
 
             player.position = TeleportPosition.position;
@@ -35,8 +35,8 @@ namespace PlatformCharacterController
                 // Minus one live after the player hitting the lava or the enemy
                 GameObject.Find("Player").GetComponent<Health>().TakeDamage("Teleport", 1);
                 
-                TeleportPosition.position =
-                    other.GetComponent<MovementCharacterController>().checkPointObj.transform.position;
+                TeleportPosition =
+                    other.GetComponent<MovementCharacterController>().checkPointObj.transform;
 
                 StartCoroutine(other.GetComponent<MovementCharacterController>()
                     .DeactivatePlayerControlByTime(TimeToControlPlayer));
