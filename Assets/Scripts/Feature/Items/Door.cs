@@ -5,7 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public GameObject gamePassObj;
+    public int passLevel;
     public Bag bag;
+    
     
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,8 @@ public class Door : MonoBehaviour
         if(bag != null){
             bag.ResetBag();
         }
+
+        GameManager.passLevel(passLevel);
 
         // Disable exit and bag button
         GameObject exitButton = GameObject.FindWithTag("ExitButton");
