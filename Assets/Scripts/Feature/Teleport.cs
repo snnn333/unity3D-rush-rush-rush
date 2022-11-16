@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace PlatformCharacterController
 {
@@ -27,6 +29,14 @@ namespace PlatformCharacterController
             player.position = TeleportPosition.position;
         }
 
+        private IEnumerator ShowDeathUI() {
+            // Enable death UI for a short time
+            Image deathUI = GameObject.FindWithTag("DeathUI").GetComponent<Image>();
+            deathUI.enabled = true;
+            yield return new WaitForSeconds(3);
+            deathUI.enabled = false;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
@@ -41,6 +51,8 @@ namespace PlatformCharacterController
                 StartCoroutine(other.GetComponent<MovementCharacterController>()
                     .DeactivatePlayerControlByTime(TimeToControlPlayer));
                 StartCoroutine(TeleportPlayer(other.transform));
+
+                StartCoroutine(ShowDeathUI());
             }
         }
     }
