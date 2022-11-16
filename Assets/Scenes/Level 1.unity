@@ -5182,6 +5182,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1811287580}
     m_Modifications:
     - target: {fileID: 327876928288883686, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
+      propertyPath: passLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 327876928288883686, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: gamePassObj
       value: 
       objectReference: {fileID: 1319792690}
@@ -10547,6 +10551,10 @@ PrefabInstance:
       propertyPath: Health
       value: 
       objectReference: {fileID: 1135891768}
+    - target: {fileID: 8821287432858950960, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: bag
+      value: 
+      objectReference: {fileID: 11400000, guid: 6873874353f216246b12c19047143efd, type: 2}
     - target: {fileID: 8821287432858950962, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_Pivot.x
       value: 0

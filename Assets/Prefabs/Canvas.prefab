@@ -2167,9 +2167,10 @@ GameObject:
   - component: {fileID: 8821287432858950961}
   - component: {fileID: 8821287432858950960}
   - component: {fileID: 3666026692514061422}
+  - component: {fileID: 919292976595073993}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2391,6 +2392,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &919292976595073993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821287432858951118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30abd8bcb7bbcb40af7d8d8b25072d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 0}
+  levelPassed: 0
+  coinsCollected: 0
 --- !u!1 &8821287433384999134
 GameObject:
   m_ObjectHideFlags: 0
