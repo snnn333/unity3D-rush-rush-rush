@@ -31,7 +31,7 @@ public class CheckPoint : MonoBehaviour
 
     private void SpawnEffect()
     {
-        GameObject spawnedVFX = Instantiate(myVFX, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject; Destroy(spawnedVFX, 5f);
+        GameObject spawnedVFX = Instantiate(myVFX, transform.position, Quaternion.Euler(-90, 0, 0)) as GameObject;
         Destroy(spawnedVFX, 5f);
     }
     
@@ -44,6 +44,9 @@ public class CheckPoint : MonoBehaviour
             isActived = true;
             // Enable material
             renderer.material = enabledMaterial;
+        }
+
+        if (other.CompareTag("Player")) {
             // VFX
             SpawnEffect();
         }

@@ -14,8 +14,10 @@ public class ItemOnWorld : MonoBehaviour
 
     private void SpawnEffect()
     {
-        GameObject spawnedVFX = Instantiate(myVFX, transform.position, transform.rotation) as GameObject; 
-        Destroy(spawnedVFX, 5f);
+        if (myVFX != null) {
+            GameObject spawnedVFX = Instantiate(myVFX, transform.position, transform.rotation) as GameObject; 
+            Destroy(spawnedVFX, 5f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

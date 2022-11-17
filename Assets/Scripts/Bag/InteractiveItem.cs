@@ -16,6 +16,16 @@ public class InteractiveItem : MonoBehaviour
     public bool consumable = true;
     public string failMessage = "Needs key to open door";
     public string successMessage = "You opened the door!";
+    // VFX
+    public GameObject myVFX;
+
+    private void SpawnEffect()
+    {
+        if (myVFX != null) {
+            GameObject spawnedVFX = Instantiate(myVFX, transform.position, transform.rotation) as GameObject; 
+            Destroy(spawnedVFX, 5f);
+        }
+    }
     
     public void OnTriggerEnter(Collider other)
     {
@@ -25,7 +35,9 @@ public class InteractiveItem : MonoBehaviour
                 Debug.Log("Item is not consumable");
                 if(myBag.itemList.Contains(key)){
                     DisplayMessage(successMessage);
+    
                     Destroy(this.gameObject);
+                    SpawnEffect();
                 }else{
                     Debug.Log(failMessage);
                     DisplayMessage(failMessage);
@@ -37,7 +49,9 @@ public class InteractiveItem : MonoBehaviour
                 var result = myBag.RemoveMultipleItem(key,cost);
                 if(result){
                     DisplayMessage(successMessage);
+                    
                     Destroy(this.gameObject);
+                    SpawnEffect();
                 }else{
                     DisplayMessage(failMessage);
                 }
