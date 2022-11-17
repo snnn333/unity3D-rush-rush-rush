@@ -13,9 +13,18 @@ public class MoveBullet : MonoBehaviour
     public Transform StartPosition = null;
 
     [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
+    [Tooltip("Effect when the bullet is flying.")] public GameObject MoveEffect;
 
     private Vector3 m_StartPosition;
     private bool IsMoving = false;
+
+    private void SpawnEffect(GameObject myVFX, float duration)
+    {
+        if (myVFX != null) {
+            GameObject spawnedVFX = Instantiate(myVFX, transform.position, transform.rotation) as GameObject; 
+            Destroy(spawnedVFX, duration);
+        }
+    }
    
 
     void Start()
@@ -29,8 +38,19 @@ public class MoveBullet : MonoBehaviour
     {
         // Wait some time then move the bullet
         IsMoving = false;
-        yield return new WaitForSecondsRealtime(sleepSeconds);
+        yield return new WaitForSeconds(sleepSeconds);
         IsMoving = true;
+        // // Display the teleport effect when the bullet starts to move
+        // if (TeleportEffect)
+        // {
+        //     Instantiate(TeleportEffect, transform.position, transform.rotation);
+        //     Destroy(TeleportEffect, 1f);
+        // }
+        // Show the move effect after a second
+        if (MoveEffect)
+        {
+            MoveEffect.SetActive(true);
+        }
     }
 
     void FixedUpdate()
@@ -47,10 +67,17 @@ public class MoveBullet : MonoBehaviour
     }
 
     private void Reset() {
+        // Destroy the move effect
+        if (MoveEffect)
+        {
+            MoveEffect.SetActive(false);
+        }
+
         // Display the smoke effect when the bullet explodes
         if (TeleportEffect)
         {
             Instantiate(TeleportEffect, transform.position, transform.rotation);
+            Destroy(TeleportEffect, 1f);
         }
 
         // Reset to the original position
