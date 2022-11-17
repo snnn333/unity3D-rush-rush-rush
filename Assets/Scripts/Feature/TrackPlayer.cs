@@ -19,6 +19,7 @@ public class TrackPlayer : MonoBehaviour
 
     [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
     [Tooltip("Effect when the bullet is flying.")] public GameObject MoveEffect;
+    [Tooltip("Effect when the box explodes.")] public GameObject BoxExplosionEffect;
 
     private Vector3 m_Direction;
     private Quaternion m_Rotation;
@@ -122,6 +123,12 @@ public class TrackPlayer : MonoBehaviour
         if(other.gameObject.tag == "Destroyable"){
             Debug.Log("destroy object");
             audioSource.Play();
+            // Show box explosion effect
+            if (BoxExplosionEffect) {
+                Instantiate(BoxExplosionEffect, other.transform.position, other.transform.rotation);
+                Destroy(BoxExplosionEffect, 5f);
+            }
+
             Destroy(other.gameObject);
             DisplayMessage(msg);
             resetItem();
