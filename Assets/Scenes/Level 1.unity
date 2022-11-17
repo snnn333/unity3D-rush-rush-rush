@@ -5432,7 +5432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -15.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5440,7 +5440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73
+      value: -72.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8584,6 +8584,7 @@ MonoBehaviour:
   maxDistance: 10
   StartPosition: {fileID: 0}
   TeleportEffect: {fileID: 0}
+  MoveEffect: {fileID: 0}
 --- !u!65 &1729092601
 BoxCollider:
   m_ObjectHideFlags: 0
