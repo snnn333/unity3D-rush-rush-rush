@@ -1578,7 +1578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539528367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 40, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 1570958660}
@@ -3797,7 +3797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -112.5
+      value: -111.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3988,9 +3988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21a4bff540d0ed4ca6d145583a03e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartTeleport: 0.5
-  TimeToControlPlayer: 1
-  TeleportEffect: {fileID: 1451354923681886, guid: 40d3bd1e8a3f0134ca158d0ddee11a7c, type: 3}
+  StartTeleport: 1
+  TimeToControlPlayer: 3
+  TeleportEffect: {fileID: 7256411017948896141, guid: b3b8f9b5600cc40418354354f2b8f177, type: 3}
   TeleportPosition: {fileID: 259031409}
 --- !u!1 &1145733848
 GameObject:
@@ -5649,9 +5649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21a4bff540d0ed4ca6d145583a03e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartTeleport: 0.5
-  TimeToControlPlayer: 1
-  TeleportEffect: {fileID: 1451354923681886, guid: 40d3bd1e8a3f0134ca158d0ddee11a7c, type: 3}
+  StartTeleport: 1
+  TimeToControlPlayer: 3
+  TeleportEffect: {fileID: 7256411017948896141, guid: b3b8f9b5600cc40418354354f2b8f177, type: 3}
   TeleportPosition: {fileID: 259031409}
 --- !u!114 &1568579144
 MonoBehaviour:
