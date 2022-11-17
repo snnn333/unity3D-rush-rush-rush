@@ -2115,6 +2115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile-2x2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6118743604611789674, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
 --- !u!4 &199553728 stripped
@@ -4561,7 +4565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8230061222752778863, guid: 2a5d63ac711250f4cae706b16e81dd2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8230061222752778863, guid: 2a5d63ac711250f4cae706b16e81dd2e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9966,7 +9970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6874688732411065497, guid: 0dd1ffc9050f8f84492b1ff9c8d8cbea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6874688732411065497, guid: 0dd1ffc9050f8f84492b1ff9c8d8cbea, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13857,6 +13861,10 @@ PrefabInstance:
     - target: {fileID: 8637277212738767852, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
       propertyPath: m_Name
       value: Tile-4x4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637277212738767852, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
@@ -20025,6 +20033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileBrick (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3338228895356048617, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     - target: {fileID: 5829322579419744210, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -21285,7 +21297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127235682197064302, guid: e1e8d33776266bc4599b46201116fd47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21983,6 +21995,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1750124991}
     m_Modifications:
+    - target: {fileID: 4480165706324007521, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     - target: {fileID: 7765150304136614505, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -22030,6 +22046,10 @@ PrefabInstance:
     - target: {fileID: 8637277212738767852, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
       propertyPath: m_Name
       value: Tile-4x4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637277212738767852, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11bc524ff1f27404a94cf2bd8152bc9c, type: 3}
@@ -22206,6 +22226,10 @@ PrefabInstance:
     - target: {fileID: 3338228895356048617, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
       propertyPath: m_Name
       value: TileBrick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338228895356048617, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
       objectReference: {fileID: 0}
     - target: {fileID: 5829322579419744210, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
       propertyPath: m_RootOrder
@@ -24949,6 +24973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileBrick (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3338228895356048617, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
+      objectReference: {fileID: 0}
     - target: {fileID: 5829322579419744210, guid: a4d5373c3d6cf004bbd03ad290c97a9a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -26518,6 +26546,10 @@ PrefabInstance:
     - target: {fileID: 6118743604611789674, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
       propertyPath: m_Name
       value: Tile-2x2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118743604611789674, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
+      propertyPath: m_TagString
+      value: Cannon Receiver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb076c995a78a5446bf9c2acf737ca80, type: 3}
@@ -28944,7 +28976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4311939693550911552, guid: 854af1afe7fe5684f94085852d81d157, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4311939693550911552, guid: 854af1afe7fe5684f94085852d81d157, type: 3}
       propertyPath: m_LocalPosition.y
