@@ -18,6 +18,7 @@ public class TrackPlayer : MonoBehaviour
     public float waitTime = 2f;
 
     [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
+    [Tooltip("Effect when the bullet is flying.")] public GameObject MoveEffect;
 
     private Vector3 m_Direction;
     private Quaternion m_Rotation;
@@ -65,6 +66,11 @@ public class TrackPlayer : MonoBehaviour
             if (isTracking == false && playerBulletDistance < follow_distance && Math.Abs(transform.position.y - playerPosition.y) < 2) {
                 isTracking = true;
                 StartCoroutine(WaitThenDie());
+
+                // Enable moving effect
+                if (MoveEffect) {
+                    MoveEffect.SetActive(true);
+                }
             }
 
             // When the player is still whithin the follow distance, continue to track the player
@@ -92,10 +98,17 @@ public class TrackPlayer : MonoBehaviour
     }
 
     private void resetItem(){
+        // Show explosion effect
         if (TeleportEffect)
-            {
-                Instantiate(TeleportEffect, transform.position, transform.rotation);
-            }
+        {
+            Instantiate(TeleportEffect, transform.position, transform.rotation);
+        }
+
+        // Stop moving effect
+        if (MoveEffect) {
+            MoveEffect.SetActive(false);
+        }
+        
         isTracking = false;
         StopAllCoroutines();
         transform.position = m_StartPosition;
