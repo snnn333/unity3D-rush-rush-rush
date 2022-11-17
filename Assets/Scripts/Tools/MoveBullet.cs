@@ -17,16 +17,7 @@ public class MoveBullet : MonoBehaviour
 
     private Vector3 m_StartPosition;
     private bool IsMoving = false;
-
-    private void SpawnEffect(GameObject myVFX, float duration)
-    {
-        if (myVFX != null) {
-            GameObject spawnedVFX = Instantiate(myVFX, transform.position, transform.rotation) as GameObject; 
-            Destroy(spawnedVFX, duration);
-        }
-    }
    
-
     void Start()
     {
         m_StartPosition = transform.position;
@@ -40,12 +31,6 @@ public class MoveBullet : MonoBehaviour
         IsMoving = false;
         yield return new WaitForSeconds(sleepSeconds);
         IsMoving = true;
-        // // Display the teleport effect when the bullet starts to move
-        // if (TeleportEffect)
-        // {
-        //     Instantiate(TeleportEffect, transform.position, transform.rotation);
-        //     Destroy(TeleportEffect, 1f);
-        // }
         // Show the move effect after a second
         if (MoveEffect)
         {
@@ -77,7 +62,7 @@ public class MoveBullet : MonoBehaviour
         if (TeleportEffect)
         {
             Instantiate(TeleportEffect, transform.position, transform.rotation);
-            Destroy(TeleportEffect, 1f);
+            // Destroy(TeleportEffect, 1f);
         }
 
         // Reset to the original position
