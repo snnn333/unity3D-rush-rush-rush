@@ -20,20 +20,22 @@ namespace PlatformCharacterController
 
         private IEnumerator TeleportPlayer(Transform player)
         {
-            yield return new WaitForSeconds(StartTeleport);
             if (TeleportEffect)
             {
-                //Instantiate(TeleportEffect, player.position, player.rotation);
+                Instantiate(TeleportEffect, player.position + Vector3.up, player.rotation);
             }
-
+            yield return new WaitForSeconds(StartTeleport);
+            
+            
             player.position = TeleportPosition.position;
         }
 
         private IEnumerator ShowDeathUI() {
+            yield return new WaitForSeconds(1);
             // Enable death UI for a short time
             Image deathUI = GameObject.FindWithTag("DeathUI").GetComponent<Image>();
             deathUI.enabled = true;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             deathUI.enabled = false;
         }
 
@@ -43,7 +45,8 @@ namespace PlatformCharacterController
             {   
 
                 // Minus one live after the player hitting the lava or the enemy
-                GameObject.Find("Player").GetComponent<Health>().TakeDamage("Teleport", 1);
+                Health health = GameObject.Find("Player").GetComponent<Health>();
+                health.TakeDamage("Teleport", 1);
                 
                 TeleportPosition =
                     other.GetComponent<MovementCharacterController>().checkPointObj.transform;
@@ -52,7 +55,9 @@ namespace PlatformCharacterController
                     .DeactivatePlayerControlByTime(TimeToControlPlayer));
                 StartCoroutine(TeleportPlayer(other.transform));
 
-                StartCoroutine(ShowDeathUI());
+                if (health.currentHealth > 0) {
+                    StartCoroutine(ShowDeathUI());
+                }
             }
         }
     }

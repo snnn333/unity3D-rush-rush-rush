@@ -5351,7 +5351,7 @@ MonoBehaviour:
   Swimming: 0
   PlayerAnimator: {fileID: 95322233677584768}
   LowZonePosition: {fileID: 4236701232871286}
-  JumpEffect: {fileID: 1451354923681886, guid: d2c6feae2c3c4d74c8e1e3553d99644e, type: 3}
+  JumpEffect: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
   DashEffect: {fileID: 1451354923681886, guid: d2c6feae2c3c4d74c8e1e3553d99644e, type: 3}
   JetPackObject: {fileID: 1745075028972756}
   SlowFallObject: {fileID: 1062024325698066}
@@ -5362,6 +5362,7 @@ MonoBehaviour:
   previousY: 0
   health: {fileID: 0}
   gamePassObj: {fileID: 0}
+  checkPointObj: {fileID: 0}
 --- !u!114 &114440448135746206
 MonoBehaviour:
   m_ObjectHideFlags: 0

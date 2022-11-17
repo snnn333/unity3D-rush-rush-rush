@@ -3451,9 +3451,17 @@ PrefabInstance:
       value: Lava
       objectReference: {fileID: 0}
     - target: {fileID: 4912117036290054683, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
+      propertyPath: StartTeleport
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912117036290054683, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: TeleportPosition
       value: 
       objectReference: {fileID: 995583187}
+    - target: {fileID: 4912117036290054683, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
+      propertyPath: TimeToControlPlayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7076153854821404517, guid: c0d29f7a2bd03004d938d6787b231037, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -5432,7 +5440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5440,7 +5448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73
+      value: -78.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8584,6 +8592,7 @@ MonoBehaviour:
   maxDistance: 10
   StartPosition: {fileID: 0}
   TeleportEffect: {fileID: 0}
+  MoveEffect: {fileID: 0}
 --- !u!65 &1729092601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10980,6 +10989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava_distort
       objectReference: {fileID: 0}
+    - target: {fileID: 8043269811411269725, guid: ab7f8e20ee8a4764a81e4855265745dd, type: 3}
+      propertyPath: TeleportEffect
+      value: 
+      objectReference: {fileID: 1763152032527406, guid: 0e37cdfe4a79e73478288f3c171e917b, type: 3}
     - target: {fileID: 8043269811411269725, guid: ab7f8e20ee8a4764a81e4855265745dd, type: 3}
       propertyPath: TeleportPosition
       value: 

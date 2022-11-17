@@ -64,7 +64,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2.5, z: 1}
-  m_Center: {x: -1.03, y: 1.08, z: 0}
+  m_Center: {x: 0.5, y: 1.042942, z: -0.0000004991889}
 --- !u!114 &5590353072090554511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,9 +80,11 @@ MonoBehaviour:
   colliderId: 0
   myBag: {fileID: 11400000, guid: 6873874353f216246b12c19047143efd, type: 2}
   key: {fileID: 11400000, guid: 8ef41e24db99c044fbd487defaffd65a, type: 2}
+  cost: 1
   consumable: 1
   failMessage: Needs key to open door
   successMessage: You opened the door!
+  myVFX: {fileID: 115174, guid: 3c2fb72925d7f3c4a8c2b92cc3a81390, type: 3}
 --- !u!1 &5590353073977212801
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,15 +197,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0000019
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5000076
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalRotation.w
@@ -239,11 +241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9999998
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0000076293945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 87af752cb21c41c45903a76ade9dea89, type: 3}
       propertyPath: m_LocalRotation.w
