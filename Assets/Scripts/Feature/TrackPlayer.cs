@@ -126,7 +126,7 @@ public class TrackPlayer : MonoBehaviour
             // Show box explosion effect
             if (BoxExplosionEffect) {
                 Instantiate(BoxExplosionEffect, other.transform.position, other.transform.rotation);
-                Destroy(BoxExplosionEffect, 5f);
+                // Destroy(BoxExplosionEffect, 5f);
             }
 
             Destroy(other.gameObject);
