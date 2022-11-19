@@ -134,6 +134,8 @@ namespace PlatformCharacterController
         private Vector3 _move;
         private Rigidbody rigid;
         private Vector3 _direction;
+
+        // New variables
         [SerializeField] float fallThreshold = 5f;
         public float previousY = 0f;
 
@@ -142,6 +144,7 @@ namespace PlatformCharacterController
         public GameObject gamePassObj;
 
         public GameObject checkPointObj;
+        public bool IsLifting;  // Whether the player is lifted by the wind
         
         private void Awake()
         {
@@ -439,14 +442,25 @@ namespace PlatformCharacterController
             _velocity.y += Mathf.Sqrt(JetPackForce * -2f * Gravity);
         }
 
+        // Change they  speed when the player is lifted by the wind
+        public void Lift(float strength, Vector3 direction)
+        {
+            IsLifting = true;
+            _velocity = strength * direction;
+        }
+
         //this is for a slow fall like a parachute.
         private void SlowFall()
         {
             SlowFallObject.SetActive(true);
-
             _controller.Move(transform.forward * SlowFallForwardSpeed);
-            _velocity.y = 0;
-            _velocity.y += -SlowFallSpeed;
+
+            // Avoid resetting the y speed when the player is lifting
+            if (IsLifting == false) {
+                
+                _velocity.y = 0;
+                _velocity.y += -SlowFallSpeed;
+            }
         }
 
         //add fuel to the jet pack
