@@ -9,18 +9,28 @@ public class CoinCounter : MonoBehaviour
     public Bag bag;
     public GameObject popupText;
     public Item Coin;
+    public Item Diamond;
     private int coinCount = 0;
     private int lastCount = 0;
+
+    private int diff = 0;
     
     void updateCount(){
         lastCount = coinCount;
+
         if(bag != null){
             if(bag.ContainsItem(Coin)){
                 coinCount = Coin.num;
             }else{
                 coinCount = 0;
             }
+
+            // Increment 10 coins when getting a diamond
+            if (bag.ContainsItem(Diamond)) {
+                coinCount += Diamond.num * 10;
+            }
         }
+        diff = coinCount - lastCount;
     }
 
     void updateDisplay(){
@@ -30,7 +40,6 @@ public class CoinCounter : MonoBehaviour
 
     void popUp(){
         if(popupText != null){
-            var diff = coinCount - lastCount;
             if(diff > 0){
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
                 effect.transform.parent = transform; 
@@ -38,7 +47,7 @@ public class CoinCounter : MonoBehaviour
             }else if (diff < 0){
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
                 effect.transform.parent = transform;
-                popupText.GetComponent<TextMeshProUGUI>().text = ""+diff;
+                popupText.GetComponent<TextMeshProUGUI>().text = "-"+diff;
             }
         }
     }
