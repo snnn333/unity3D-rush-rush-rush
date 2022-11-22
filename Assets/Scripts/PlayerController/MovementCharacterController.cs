@@ -325,7 +325,7 @@ namespace PlatformCharacterController
 
             _move = (_horizontal * _right + _vertical * _forward);
             _direction = (_horizontal * _right + _vertical * _forward);
-
+            
 
             //if no is correct grounded then slide.
             if (!_isCorrectGrounded && _isGrounded)

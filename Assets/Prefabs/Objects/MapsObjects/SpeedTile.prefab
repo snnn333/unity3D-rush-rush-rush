@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2065616089427851124}
   - component: {fileID: 3938680668306807579}
   - component: {fileID: 7968399011135257631}
+  - component: {fileID: 3662888287781305386}
   m_Layer: 0
   m_Name: default (1)
   m_TagString: Untagged
@@ -112,6 +113,19 @@ MonoBehaviour:
   ZoneSpeed: 20
   DashingEffect: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
   RunningEffect: {fileID: 111326, guid: 042bead5c0559e840801704d1e092fd3, type: 3}
+--- !u!114 &3662888287781305386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689331094279901585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10584b8dd3cf949e2bf0b4abc4122a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 8a7b4d22cb5a14316a59a7076a0ce81a, type: 3}
 --- !u!1 &4750528077216853353
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5379150294761863123}
+  - component: {fileID: 193422696077142516}
   m_Layer: 0
   m_Name: SpeedTile
   m_TagString: Untagged
@@ -145,6 +160,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193422696077142516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750528077216853353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10584b8dd3cf949e2bf0b4abc4122a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: 8a7b4d22cb5a14316a59a7076a0ce81a, type: 3}
 --- !u!1001 &2352613694015604423
 PrefabInstance:
   m_ObjectHideFlags: 0
