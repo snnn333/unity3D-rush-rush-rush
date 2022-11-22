@@ -24,11 +24,6 @@ public class CoinCounter : MonoBehaviour
             }else{
                 coinCount = 0;
             }
-
-            // Increment 10 coins when getting a diamond
-            if (bag.ContainsItem(Diamond)) {
-                coinCount += Diamond.num * 10;
-            }
         }
         diff = coinCount - lastCount;
     }
@@ -47,7 +42,7 @@ public class CoinCounter : MonoBehaviour
             }else if (diff < 0){
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
                 effect.transform.parent = transform;
-                popupText.GetComponent<TextMeshProUGUI>().text = "-"+diff;
+                popupText.GetComponent<TextMeshProUGUI>().text = ""+diff;
             }
         }
     }
