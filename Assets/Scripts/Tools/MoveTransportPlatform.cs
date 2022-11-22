@@ -8,8 +8,10 @@ public class MoveTransportPlatform : MonoBehaviour
     public Vector3 m_Direction = Vector3.up;
     public float MoveDistance = 10f;
 
-    Vector3 m_StartPosition;
-    bool IsMoving = false;
+    public bool IsNeedReset = false;    // Reset to the original point after getting to the destination
+
+    private Vector3 m_StartPosition;
+    private bool IsMoving = false;
    
 
     void Start()
@@ -24,10 +26,16 @@ public class MoveTransportPlatform : MonoBehaviour
             transform.position += m_Direction * m_Speed;
         }
 
-        // Switch the moving direction after reaching the terminal
+        // When reaching the terminal
         if (Vector3.Distance(m_StartPosition, transform.position) >= MoveDistance) {
-            m_Direction = m_Direction * -1;
-            m_StartPosition = transform.position;
+            if (IsNeedReset) {
+                // Reset to the orignal point
+                transform.position = m_StartPosition;
+            } else {
+                // Switch the moving direction
+                m_Direction = m_Direction * -1;
+                m_StartPosition = transform.position;
+            }
         }
     }
 
@@ -42,7 +50,12 @@ public class MoveTransportPlatform : MonoBehaviour
     IEnumerator waiter()
     {
         //Wait for 1 seconds
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         IsMoving = true;
+    }
+
+    IEnumerator WaitAndReset()
+    {
+        yield return new WaitForSeconds(2);
     }
 }

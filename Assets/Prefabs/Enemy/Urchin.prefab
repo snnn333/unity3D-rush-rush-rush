@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 7123523376295646400}
   - component: {fileID: 2855671434501575054}
   - component: {fileID: 2855671434501575048}
+  - component: {fileID: 7880760272250259136}
   m_Layer: 0
   m_Name: Urchin
   m_TagString: Untagged
@@ -425,7 +426,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6089024047278843603}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
@@ -449,6 +450,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7880760272250259136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089024047278843603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21a4bff540d0ed4ca6d145583a03e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartTeleport: 1
+  TimeToControlPlayer: 3
+  TeleportEffect: {fileID: 158308, guid: 96a96c08c36361544affb3c783e0056e, type: 3}
+  TeleportPosition: {fileID: 0}
 --- !u!1 &7192589008116660614
 GameObject:
   m_ObjectHideFlags: 0
