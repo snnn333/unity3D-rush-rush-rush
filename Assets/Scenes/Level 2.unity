@@ -15930,15 +15930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 4519129323941598, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15970,12 +15970,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: CanDash
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: Jetpack
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
+      propertyPath: DashEffect
+      value: 
+      objectReference: {fileID: 105608, guid: 9c6af9e56f998094e8a7ade8f0e2a0a9, type: 3}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: JumpHeight
       value: 2.5
