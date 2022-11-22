@@ -2397,6 +2397,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1467076959044028162, guid: 5d12b7f68add57343961123a2bf534a5, type: 3}
   m_PrefabInstance: {fileID: 822076184}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &349312122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8043269811143177308, guid: ab7f8e20ee8a4764a81e4855265745dd, type: 3}
+  m_PrefabInstance: {fileID: 369741930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &349312129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349312122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d339746a108b9234ea4f56c0689d600e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &363723918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6385,8 +6402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 0.05
   m_Direction: {x: 1, y: 0, z: 0}
-  MoveDistance: 40
-  IsNeedReset: 0
+  MoveDistance: 30
+  IsNeedReset: 1
 --- !u!1001 &800216422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10553,6 +10570,10 @@ PrefabInstance:
     - target: {fileID: 976743031675662353, guid: 902967abf1332214dbca38486ca5ff64, type: 3}
       propertyPath: m_Name
       value: Bounce Pad (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 976743031675662353, guid: 902967abf1332214dbca38486ca5ff64, type: 3}
+      propertyPath: m_TagString
+      value: MovingBouncePad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 902967abf1332214dbca38486ca5ff64, type: 3}

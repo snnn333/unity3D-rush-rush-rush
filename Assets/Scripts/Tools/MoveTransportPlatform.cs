@@ -29,8 +29,7 @@ public class MoveTransportPlatform : MonoBehaviour
         // When reaching the terminal
         if (Vector3.Distance(m_StartPosition, transform.position) >= MoveDistance) {
             if (IsNeedReset) {
-                // Reset to the orignal point
-                transform.position = m_StartPosition;
+                IsMoving = false;   // Wait for the player to move
             } else {
                 // Switch the moving direction
                 m_Direction = m_Direction * -1;
@@ -54,8 +53,15 @@ public class MoveTransportPlatform : MonoBehaviour
         IsMoving = true;
     }
 
+    public void Reset()
+    {
+        StartCoroutine(WaitAndReset());
+        IsMoving = false;   // Wait for the player to move
+    }
+
     IEnumerator WaitAndReset()
     {
         yield return new WaitForSeconds(2);
+        transform.position = m_StartPosition;
     }
 }
