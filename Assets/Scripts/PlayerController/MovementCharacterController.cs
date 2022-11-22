@@ -445,8 +445,10 @@ namespace PlatformCharacterController
         // Change they  speed when the player is lifted by the wind
         public void Lift(float strength, Vector3 direction)
         {
-            IsLifting = true;
-            _velocity = strength * direction;
+            // IsLifting = true;
+            if (_slowFall & direction == Vector3.up) {
+                _velocity.y = strength;
+            }
         }
 
         //this is for a slow fall like a parachute.
