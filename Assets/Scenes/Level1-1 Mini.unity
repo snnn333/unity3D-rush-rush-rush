@@ -318,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821287432858950962, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821287432858950962, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3644,7 +3644,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 327876928288883686, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: passLevel
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 327876928288883686, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: gamePassObj
@@ -4031,6 +4031,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 428379383}
   - {fileID: 669589954}
   - {fileID: 1730775126}
   - {fileID: 51181906}
@@ -4038,7 +4039,6 @@ Transform:
   - {fileID: 1410269649}
   - {fileID: 1458229960}
   - {fileID: 1171906695}
-  - {fileID: 428379383}
   - {fileID: 1131092769}
   - {fileID: 1960613964}
   - {fileID: 586966870}
