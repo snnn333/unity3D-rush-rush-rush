@@ -4,56 +4,39 @@ using UnityEngine;
 
 public class ShopItem : MonoBehaviour
 {   
-    public Item item;
-    public string itemName;
-    public int num;
+    // public Item item;
+    // public string itemName;
+    // public int num;
     public int cost;
     public Item coin;
     public Bag bag;
-    private bool _IsEntered = false;
-    // Start is called before the first frame update
-    void Start()
-    {   
-        if(item != null){
-            itemName = item.name;
+
+    public GameObject usedEffect;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (bag.ContainsItem(coin) && coin.num >= cost) {
+                bag.RemoveMultipleItem(coin, cost); // Decrease the money
+                UseItem();
+            } else {
+                DisplayMessage("Not enough moeny");
+            }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                _IsEntered = true;
-                DisplayMessage("Press [E] to Buy "+itemName);
-                Debug.Log("Needs key press to enter the level");
-            }
+    private void UseItem() {
+        // TODO: Only support bread
+        GameObject.Find("Player").GetComponent<Health>().GainHealth(1);
+        Debug.Log("Gain 1 health");
+
+        if (usedEffect) {
+            GameObject spawnedVFX = Instantiate(usedEffect, transform.position, transform.rotation) as GameObject; 
+            Destroy(usedEffect, 5f);
         }
 
-    private void OnTriggerExit(Collider other)
-        {
-            _IsEntered = false;
-        }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_IsEntered && Input.GetKeyDown(KeyCode.E))
-        {
-            if(bag.ContainsItem(item) && item.num >= cost){
-                for(int i = 0; i < num; i++){
-                    bag.AddItem(item);
-                }
-                bag.RemoveMultipleItem(coin,cost);
-
-                DisplayMessage("Successfully bought " + itemName);
-            }else{
-                DisplayMessage("You need " + cost + " " + coin.name + " to buy "+itemName);
-            }
-        }
-
-        // if(_IsEntered){
-        //     DisplayMessage("Press [E] to Buy "+itemName);
-        // }
+        Destroy(gameObject);
     }
 
     private void DisplayMessage(string msg){

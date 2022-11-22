@@ -5333,7 +5333,7 @@ MonoBehaviour:
   CanJump: 1
   JumpHeight: 2
   CanDoubleJump: 1
-  CanDash: 1
+  CanDash: 0
   DashCooldown: 1
   DashForce: 5
   Jetpack: 1
@@ -5363,6 +5363,7 @@ MonoBehaviour:
   health: {fileID: 0}
   gamePassObj: {fileID: 0}
   checkPointObj: {fileID: 0}
+  IsLifting: 0
 --- !u!114 &114440448135746206
 MonoBehaviour:
   m_ObjectHideFlags: 0

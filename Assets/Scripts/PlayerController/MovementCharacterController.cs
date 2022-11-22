@@ -122,7 +122,7 @@ namespace PlatformCharacterController
         private Vector3 _right;
 
         //temporal vars
-        private float _originalRunningSpeed;
+        public float _originalRunningSpeed;
         private float _dashCooldown;
         private float _gravity;
         private bool _doubleJump;
@@ -499,6 +499,10 @@ namespace PlatformCharacterController
         //change the speed for the player
         public void ChangeSpeed(float speed)
         {
+            // if (DashEffect)
+            // {
+            //     Instantiate(DashEffect, transform.position, _characterTransform.rotation);
+            // }
             RunningSpeed = speed;
         }
 
