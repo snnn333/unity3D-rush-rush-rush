@@ -1463,12 +1463,12 @@ Transform:
   - {fileID: 1453271039}
   - {fileID: 1006102140}
   - {fileID: 840558399}
+  - {fileID: 1024951472}
   - {fileID: 841709671}
   - {fileID: 1596988807}
   - {fileID: 1717247080}
   - {fileID: 5980478451641849214}
   - {fileID: 1688927731}
-  - {fileID: 1024951472}
   - {fileID: 387722482}
   - {fileID: 1809940302}
   - {fileID: 1422175238}
@@ -14821,7 +14821,7 @@ Transform:
   - {fileID: 1620413538}
   - {fileID: 2056230168109388387}
   m_Father: {fileID: 130577038}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1032793203 stripped
 Transform:
@@ -16150,6 +16150,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8436175228191363523, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401641456665926, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_Name
       value: Player
@@ -31130,6 +31134,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3666026692514061422, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: Priority
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666026692514061422, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8821287431588681151, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_IsActive
       value: 0
