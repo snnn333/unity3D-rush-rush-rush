@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 namespace PlatformCharacterController
@@ -16,7 +17,10 @@ namespace PlatformCharacterController
 
         [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
 
-        public Transform TeleportPosition;
+        [Tooltip("Position to teleport the player.")] public Transform TeleportPosition;
+
+        private Animator transition;
+        private TextMeshProUGUI _textGUI;
 
         private IEnumerator TeleportPlayer(Transform player)
         {
@@ -27,16 +31,34 @@ namespace PlatformCharacterController
             yield return new WaitForSeconds(StartTeleport);
             
             
-            player.position = TeleportPosition.position;
+            player.position = TeleportPosition.position - 2 * Vector3.forward;
+            player.rotation = Quaternion.identity;
         }
 
         private IEnumerator ShowDeathUI() {
+            // yield return new WaitForSeconds(1);
+            // // Enable death UI for a short time
+            // Image deathUI = GameObject.FindWithTag("DeathUI").GetComponent<Image>();
+            // deathUI.enabled = true;
+            // yield return new WaitForSeconds(2);
+            // deathUI.enabled = false;
+
+            // Set the text
+            transition.SetTrigger("Start");
             yield return new WaitForSeconds(1);
-            // Enable death UI for a short time
-            Image deathUI = GameObject.FindWithTag("DeathUI").GetComponent<Image>();
-            deathUI.enabled = true;
-            yield return new WaitForSeconds(2);
-            deathUI.enabled = false;
+
+            if (_textGUI != null) {
+                _textGUI.text = "Too Bad!";
+            }
+
+            yield return new WaitForSeconds(1.2f);
+            
+            transition.SetTrigger("End");
+            yield return new WaitForSeconds(1);
+
+            if (_textGUI != null) {
+                _textGUI.text = "";
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -56,6 +78,11 @@ namespace PlatformCharacterController
                 StartCoroutine(TeleportPlayer(other.transform));
 
                 if (health.currentHealth > 0) {
+                    GameObject crossFadeImage = GameObject.Find("CrossFadeImage");
+                    _textGUI = GameObject.Find("LevelTitle").GetComponent<TextMeshProUGUI>();
+                    if (crossFadeImage == null) return;
+                    transition = crossFadeImage.GetComponent<Animator>();
+                    if (transition == null) return;
                     StartCoroutine(ShowDeathUI());
                 }
             }

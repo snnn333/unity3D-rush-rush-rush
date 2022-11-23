@@ -37,11 +37,11 @@ public class CoinCounter : MonoBehaviour
         if(popupText != null){
             if(diff > 0){
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
-                effect.transform.parent = transform; 
+                effect.transform.SetParent(transform, false); 
                 popupText.GetComponent<TextMeshProUGUI>().text = "+"+diff;
             }else if (diff < 0){
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
-                effect.transform.parent = transform;
+                effect.transform.SetParent(transform, false); 
                 popupText.GetComponent<TextMeshProUGUI>().text = ""+diff;
             }
         }
