@@ -14,6 +14,7 @@ public class HealthHeartBar : MonoBehaviour
         for (int i = 0; i < Health.maxHealth; i++)
         {
             GameObject heart = Instantiate(Heart, transform);
+            heart.transform.position =  new Vector3(heart.transform.position.x, heart.transform.position.y, 0);
             hearts.Add(heart.GetComponent<HealthHeart>());
         }
     }
@@ -37,6 +38,7 @@ public class HealthHeartBar : MonoBehaviour
     {
         
         GameObject heart = Instantiate(Heart, transform);
+        heart.transform.position =  new Vector3(heart.transform.position.x, heart.transform.position.y, 0);
         HealthHeart heartScript = heart.GetComponent<HealthHeart>();
         heartScript.SetHeartImage(HeartStatus.Empty);
         hearts.Add(heartScript);
