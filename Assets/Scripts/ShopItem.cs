@@ -11,6 +11,8 @@ public class ShopItem : MonoBehaviour
     public Item coin;
     public Bag bag;
 
+    public AudioClip useSound;
+
     public GameObject usedEffect;
 
     private void OnTriggerEnter(Collider other)
@@ -28,12 +30,16 @@ public class ShopItem : MonoBehaviour
 
     private void UseItem() {
         // TODO: Only support bread
+        // Play use sound
+        if (useSound != null) {
+                AudioSource.PlayClipAtPoint(useSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+        }
+
         GameObject.Find("Player").GetComponent<Health>().GainHealth(1);
         Debug.Log("Gain 1 health");
 
         if (usedEffect) {
             GameObject spawnedVFX = Instantiate(usedEffect, transform.position, transform.rotation) as GameObject; 
-            Destroy(usedEffect, 5f);
         }
 
         Destroy(gameObject);

@@ -15,14 +15,19 @@ public class MoveBullet : MonoBehaviour
     [Tooltip("Effect to start teleport.")] public GameObject TeleportEffect;
     [Tooltip("Effect when the bullet is flying.")] public GameObject MoveEffect;
 
+    public AudioClip ExplodeSound;
+
     private Vector3 m_StartPosition;
     private bool IsMoving = false;
+    private UnityEngine.Camera cam;
    
     void Start()
     {
         m_StartPosition = transform.position;
         // Sleep for some time before moving the cannon
         StartCoroutine(WaitThenMove());
+        // Camera
+        cam = UnityEngine.Camera.main;
     }
 
     IEnumerator WaitThenMove()
@@ -52,6 +57,13 @@ public class MoveBullet : MonoBehaviour
     }
 
     private void Reset() {
+        // Play explosion sound
+        Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
+        // If the object is in the camera view
+        if (ExplodeSound != null && viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0) {
+            AudioSource.PlayClipAtPoint(ExplodeSound, transform.position + 0.1f*transform.position, 10f);
+        }
+
         // Destroy the move effect
         if (MoveEffect)
         {
