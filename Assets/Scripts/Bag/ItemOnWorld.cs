@@ -12,6 +12,9 @@ public class ItemOnWorld : MonoBehaviour
     // VFX
     public GameObject myVFX;
 
+    // Audio
+    public AudioClip pickupSound;
+
     private void SpawnEffect()
     {
         if (myVFX != null) {
@@ -31,6 +34,11 @@ public class ItemOnWorld : MonoBehaviour
             //     AddItem(other);
             // }
             AddItem(other);
+
+            // Play the sound
+            if (pickupSound != null) {
+                AudioSource.PlayClipAtPoint(pickupSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+            }
 
             // VFX
             SpawnEffect();
