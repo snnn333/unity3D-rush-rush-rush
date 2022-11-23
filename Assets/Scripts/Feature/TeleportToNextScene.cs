@@ -84,6 +84,12 @@ namespace PlatformCharacterController
             text.text = scenename;
             if (scenename == "Level 1") {
                 text.text += "\nBullet Hill";
+            } else if (scenename == "Level 2") {
+                text.text += "\nRuined Castle";
+            } else if (scenename == "Level 3") {
+                text.text += "\nWindy Beach";
+            } else if (scenename == "Level 4") {
+                text.text += "\nIcy Mountain";
             }
 
             yield return new WaitForSeconds(1f);
