@@ -987,14 +987,18 @@ MonoBehaviour:
   DashEffect: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
   JetPackObject: {fileID: 4562020594577740978}
   SlowFallObject: {fileID: 4560593131938697844}
+  jumpSound: {fileID: 8300000, guid: 9039409767ba442aeb712e1d00e365ca, type: 3}
   PlayerInputs: {fileID: 4529621896906988374}
   CurrentActivePlatform: {fileID: 0}
+  _slowFall: 0
   Health: {fileID: 0}
+  _originalRunningSpeed: 0
   fallThreshold: 5
   previousY: 0
   health: {fileID: 0}
   gamePassObj: {fileID: 0}
   checkPointObj: {fileID: 0}
+  IsLifting: 0
 --- !u!114 &4530388500854772472
 MonoBehaviour:
   m_ObjectHideFlags: 0
