@@ -18,6 +18,8 @@ namespace PlatformCharacterController
 
         public GameObject LevelTitle;
 
+        public GameObject EnterEffect;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player") && IsNeedKeyPress == false)
@@ -61,14 +63,30 @@ namespace PlatformCharacterController
 
         IEnumerator LoadLevel(string scenename)
         {
-            // Set the text
-            var text = LevelTitle.GetComponent<TextMeshProUGUI>();
-            text.text = scenename;
-            // Play animation
+            // Start entering effect
+            GameObject player = GameObject.FindWithTag("Player");
+
+            if (EnterEffect != null) {
+                Instantiate(EnterEffect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+            }
+           
+            // Make the player jump
+            // player.GetComponent<MovementCharacterController>().Jump(2);
+            yield return new WaitForSeconds(1f);
+
+            // Play transition animation
             transaction.SetTrigger("Start");
 
             // Wait for seconds
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
+            // Set the text
+            var text = LevelTitle.GetComponent<TextMeshProUGUI>();
+            text.text = scenename;
+            if (scenename == "Level 1") {
+                text.text += "\nBullet Hill";
+            }
+
+            yield return new WaitForSeconds(1f);
 
             SceneManager.LoadScene(scenename);
         }

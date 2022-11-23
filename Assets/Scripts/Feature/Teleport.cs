@@ -51,14 +51,15 @@ namespace PlatformCharacterController
                 _textGUI.text = "Too Bad!";
             }
 
-            yield return new WaitForSeconds(1.2f);
-            
-            transition.SetTrigger("End");
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.1f);
 
             if (_textGUI != null) {
                 _textGUI.text = "";
             }
+            
+            transition.SetTrigger("End");
+            yield return new WaitForSeconds(1);
+
         }
 
         private void OnTriggerEnter(Collider other)
