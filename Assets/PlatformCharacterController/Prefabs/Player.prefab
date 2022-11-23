@@ -5355,9 +5355,12 @@ MonoBehaviour:
   DashEffect: {fileID: 1451354923681886, guid: d2c6feae2c3c4d74c8e1e3553d99644e, type: 3}
   JetPackObject: {fileID: 1745075028972756}
   SlowFallObject: {fileID: 1062024325698066}
+  jumpSound: {fileID: 8300000, guid: 9039409767ba442aeb712e1d00e365ca, type: 3}
   PlayerInputs: {fileID: 114223522827410224}
   CurrentActivePlatform: {fileID: 0}
+  _slowFall: 0
   Health: {fileID: 0}
+  _originalRunningSpeed: 0
   fallThreshold: 5
   previousY: 0
   health: {fileID: 0}

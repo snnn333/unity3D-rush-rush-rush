@@ -92,6 +92,9 @@ namespace PlatformCharacterController
         public GameObject JetPackObject;
         public GameObject SlowFallObject;
 
+        [Header("Sounds")]
+        public AudioClip jumpSound;
+
         [Header("Use this to capture inputs")] public Inputs PlayerInputs;
 
         [Header("Platforms")] public Transform CurrentActivePlatform;
@@ -380,6 +383,11 @@ namespace PlatformCharacterController
                 return;
             }
 
+            // Play the jump sound
+            if (jumpSound) {
+                AudioSource.PlayClipAtPoint(jumpSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position, 10f);
+            }
+            
             CurrentActivePlatform = null;
             //removing parachute if active;
             _slowFall = false;
