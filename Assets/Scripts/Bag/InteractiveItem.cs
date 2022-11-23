@@ -19,6 +19,9 @@ public class InteractiveItem : MonoBehaviour
     // VFX
     public GameObject myVFX;
 
+    // Audio
+    public AudioClip pickupSound;
+
     private void SpawnEffect()
     {
         if (myVFX != null) {
@@ -31,6 +34,12 @@ public class InteractiveItem : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player")){
             Debug.Log("Player entered trigger");
+
+            // Play the sound
+            if (pickupSound != null) {
+                AudioSource.PlayClipAtPoint(pickupSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+            }
+            
             if (!consumable){
                 Debug.Log("Item is not consumable");
                 if(myBag.itemList.Contains(key)){

@@ -19,6 +19,7 @@ namespace PlatformCharacterController
         public GameObject LevelTitle;
 
         public GameObject EnterEffect;
+        public AudioClip EnterSound;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -65,7 +66,11 @@ namespace PlatformCharacterController
         {
             // Start entering effect
             GameObject player = GameObject.FindWithTag("Player");
-
+            
+            // Start effect and sound
+            if (EnterSound) {
+                AudioSource.PlayClipAtPoint(EnterSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position, 10f);
+            }
             if (EnterEffect != null) {
                 Instantiate(EnterEffect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             }
@@ -84,6 +89,12 @@ namespace PlatformCharacterController
             text.text = scenename;
             if (scenename == "Level 1") {
                 text.text += "\nBullet Hill";
+            } else if (scenename == "Level 2") {
+                text.text += "\nRuined Castle";
+            } else if (scenename == "Level 3") {
+                text.text += "\nWindy Beach";
+            } else if (scenename == "Level 4") {
+                text.text += "\nIcy Mountain";
             }
 
             yield return new WaitForSeconds(1f);

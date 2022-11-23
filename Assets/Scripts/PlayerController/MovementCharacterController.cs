@@ -92,6 +92,9 @@ namespace PlatformCharacterController
         public GameObject JetPackObject;
         public GameObject SlowFallObject;
 
+        [Header("Sounds")]
+        public AudioClip jumpSound;
+
         [Header("Use this to capture inputs")] public Inputs PlayerInputs;
 
         [Header("Platforms")] public Transform CurrentActivePlatform;
@@ -114,7 +117,7 @@ namespace PlatformCharacterController
         private bool _jump;
         private bool _dash;
         private bool _flyJetPack;
-        private bool _slowFall;
+        public bool _slowFall;
         public Health Health;
         //get direction for the camera
         private Transform _cameraTransform;
@@ -373,13 +376,13 @@ namespace PlatformCharacterController
             SetGroundedState();
         }
 
-        public void Jump(float jumpHeight)
+        public void Jump(float jumpHeight, bool useAudio = true)
         {
             if (!CanJump || !CanControl)
             {
                 return;
             }
-
+            
             CurrentActivePlatform = null;
             //removing parachute if active;
             _slowFall = false;
@@ -398,6 +401,11 @@ namespace PlatformCharacterController
                 if (JumpEffect)
                 {
                     Instantiate(JumpEffect, LowZonePosition.position, LowZonePosition.rotation);
+                }
+
+                // Play the jump sound
+                if (jumpSound && useAudio == true) {
+                    AudioSource.PlayClipAtPoint(jumpSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position, 10f);
                 }
             }
             else if (CanDoubleJump && _doubleJump)

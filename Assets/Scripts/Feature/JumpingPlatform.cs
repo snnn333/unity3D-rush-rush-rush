@@ -15,7 +15,7 @@ namespace PlatformCharacterController
         {
             if (!other.CompareTag("Player")) return;
             //make the player jump
-            other.GetComponent<MovementCharacterController>().Jump(JumpForze);
+            other.GetComponent<MovementCharacterController>().Jump(JumpForze, false);
             //animate platform if exist animator
             if (PlatformAnimator)
             {
