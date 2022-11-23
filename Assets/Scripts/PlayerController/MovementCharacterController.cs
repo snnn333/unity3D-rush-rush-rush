@@ -376,16 +376,11 @@ namespace PlatformCharacterController
             SetGroundedState();
         }
 
-        public void Jump(float jumpHeight)
+        public void Jump(float jumpHeight, bool useAudio = true)
         {
             if (!CanJump || !CanControl)
             {
                 return;
-            }
-
-            // Play the jump sound
-            if (jumpSound) {
-                AudioSource.PlayClipAtPoint(jumpSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position, 10f);
             }
             
             CurrentActivePlatform = null;
@@ -406,6 +401,11 @@ namespace PlatformCharacterController
                 if (JumpEffect)
                 {
                     Instantiate(JumpEffect, LowZonePosition.position, LowZonePosition.rotation);
+                }
+
+                // Play the jump sound
+                if (jumpSound && useAudio == true) {
+                    AudioSource.PlayClipAtPoint(jumpSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position, 10f);
                 }
             }
             else if (CanDoubleJump && _doubleJump)

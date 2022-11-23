@@ -29,7 +29,7 @@ public class Door : MonoBehaviour
         GameObject exitButton = GameObject.FindWithTag("ExitButton");
         exitButton.SetActive(false);
 
-        GameObject bagButton = GameObject.FindWithTag("BagButton");
-        bagButton.SetActive(false);
+        // GameObject bagButton = GameObject.FindWithTag("BagButton");
+        // bagButton.SetActive(false);
     }
 }

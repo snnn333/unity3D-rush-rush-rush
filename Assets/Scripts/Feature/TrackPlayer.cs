@@ -34,6 +34,9 @@ public class TrackPlayer : MonoBehaviour
     
     public AudioSource audioSource;
     public AudioClip explodeClip;
+
+    public AudioClip MiniExplodeSound;
+    private UnityEngine.Camera cam;
     
     void Start()
     {
@@ -44,6 +47,7 @@ public class TrackPlayer : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         explodeClip = Resources.Load<AudioClip>("Audio/explode");
         audioSource.clip = explodeClip;
+        cam = UnityEngine.Camera.main;
     }
 
     IEnumerator WaitThenDie()
@@ -134,6 +138,12 @@ public class TrackPlayer : MonoBehaviour
             resetItem();
         }
         else if (other.gameObject.tag == "Cannon Receiver") {
+            // Play explosion sound
+            PlayMiniExplodeSound();
+            
+            if (MiniExplodeSound != null) {
+                AudioSource.PlayClipAtPoint(MiniExplodeSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+            }
             resetItem();
         }
     }
@@ -144,5 +154,14 @@ public class TrackPlayer : MonoBehaviour
             message[0].GetComponent<Notification>().setMessage(msg);
         }
         
+    }
+
+    private void PlayMiniExplodeSound() {
+        // Play explosion sound
+        Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
+        // If the object is in the camera view
+        if (MiniExplodeSound != null && viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0) {
+            AudioSource.PlayClipAtPoint(MiniExplodeSound, transform.position + 0.1f*transform.position, 10f);
+        }
     }
 }
