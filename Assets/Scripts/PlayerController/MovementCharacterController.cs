@@ -114,7 +114,7 @@ namespace PlatformCharacterController
         private bool _jump;
         private bool _dash;
         private bool _flyJetPack;
-        private bool _slowFall;
+        public bool _slowFall;
         public Health Health;
         //get direction for the camera
         private Transform _cameraTransform;

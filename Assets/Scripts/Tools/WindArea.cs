@@ -39,7 +39,7 @@ namespace PlatformCharacterController
             controller.IsLifting = false;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             // Out of the windzone when the player flies to high away from the fan
             if (inWindZone == true && Vector3.Distance(transform.position, player.transform.position) > 15f) 
@@ -55,6 +55,13 @@ namespace PlatformCharacterController
             {
                 // Lift up the player
                 controller.Lift(strength, direction);
+
+                // After jump, start the slow fall
+                if (Input.GetKeyUp("space") && controller._slowFall == false) {
+                    // Enable the slow fall if haven't
+                    controller.Lift(strength, direction);
+                    controller._slowFall = true;
+            }
             }
         }
 
