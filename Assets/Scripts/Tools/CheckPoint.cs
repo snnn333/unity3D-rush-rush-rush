@@ -42,7 +42,7 @@ public class CheckPoint : MonoBehaviour
         if (other.CompareTag("Player") && !isActived)
         {
             // Play the sound
-            if (other.gameObject.tag == "Player")
+            if (successSound)
             {
                 AudioSource.PlayClipAtPoint(successSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
             }
