@@ -13,15 +13,16 @@ public class CheckPoint : MonoBehaviour
     private Material enabledMaterial;
     // VFX
     public GameObject myVFX;
-    private Renderer renderer;
+    public AudioClip successSound;
+    private Renderer myRenderer;
 
     public void Start()
     {
-        renderer = GetComponent<Renderer>();
+        myRenderer = GetComponent<Renderer>();
         // copy reference to the original material
-        enabledMaterial = renderer.material;
+        enabledMaterial = myRenderer.material;
         // Disable material
-        renderer.material = disabledMaterial;
+        myRenderer.material = disabledMaterial;
     }
 
     public void Awake()
@@ -37,13 +38,18 @@ public class CheckPoint : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("111");
+        //  When the checkpoint is not activated
         if (other.CompareTag("Player") && !isActived)
         {
+            // Play the sound
+            if (successSound)
+            {
+                AudioSource.PlayClipAtPoint(successSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+            }
             other.GetComponent<MovementCharacterController>().checkPointObj = gameObject.transform.parent.gameObject;
             isActived = true;
             // Enable material
-            renderer.material = enabledMaterial;
+            myRenderer.material = enabledMaterial;
         }
 
         if (other.CompareTag("Player")) {

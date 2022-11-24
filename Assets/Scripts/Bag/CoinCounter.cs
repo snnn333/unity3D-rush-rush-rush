@@ -9,7 +9,8 @@ public class CoinCounter : MonoBehaviour
     public Bag bag;
     public GameObject popupText;
     public Item Coin;
-    public Item Diamond;
+
+    public int TotalDiamond = 0;    // The total amount of diamond in the level
     private int coinCount = 0;
     private int lastCount = 0;
 
@@ -30,7 +31,13 @@ public class CoinCounter : MonoBehaviour
 
     void updateDisplay(){
         var text = GetComponent<TextMeshProUGUI>();
+
         text.text = coinCount.ToString();
+
+        // Append the total diamond to the diamond count
+        if (Coin.name == "Diamond" && TotalDiamond != 0) {
+            text.text += "/" + TotalDiamond;
+        }
     }
 
     void popUp(){

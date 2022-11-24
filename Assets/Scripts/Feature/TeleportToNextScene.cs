@@ -75,7 +75,8 @@ namespace PlatformCharacterController
                 Instantiate(EnterEffect, transform.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             }
            
-            // Make the player jump
+            // Disable player's movement
+            (player.GetComponent("MovementCharacterController") as MonoBehaviour).enabled = false;
             // player.GetComponent<MovementCharacterController>().Jump(2);
             yield return new WaitForSeconds(1f);
 

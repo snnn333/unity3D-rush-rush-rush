@@ -51,7 +51,7 @@ namespace PlatformCharacterController
                 _textGUI.text = "Too Bad!";
             }
 
-            yield return new WaitForSeconds(1.1f);
+            yield return new WaitForSeconds(2f);
 
             if (_textGUI != null) {
                 _textGUI.text = "";

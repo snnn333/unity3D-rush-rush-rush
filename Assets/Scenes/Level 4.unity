@@ -1644,7 +1644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2056230168210233701, guid: da0708c1f0a4de140b5aa55cd007461e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 2056230168210233701, guid: da0708c1f0a4de140b5aa55cd007461e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2675,7 +2675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2056230168210233701, guid: da0708c1f0a4de140b5aa55cd007461e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2056230168210233701, guid: da0708c1f0a4de140b5aa55cd007461e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3192,6 +3192,11 @@ Light:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7123523376295646400, guid: 5547204c0f3ea414aa70144a43e1b1d4, type: 3}
   m_PrefabInstance: {fileID: 539617990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &407166454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5031848757698064635, guid: 8267670f7d2f73b42bbd6beacede7eb8, type: 3}
+  m_PrefabInstance: {fileID: 745206597}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &407981942 stripped
 Transform:
@@ -9644,6 +9649,10 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
+      propertyPath: gamePassObj
+      value: 
+      objectReference: {fileID: 2142403888}
+    - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: HaveSlowFall
       value: 0
       objectReference: {fileID: 0}
@@ -9658,7 +9667,7 @@ PrefabInstance:
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: checkPointObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 407166454}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: fallThreshold
       value: 15
@@ -18121,6 +18130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9095050987232549657, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: TotalDiamond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
 --- !u!1 &2142403888 stripped
@@ -18196,7 +18209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550737499994463838, guid: af3279c96b97a354b9679db0bfe02ba0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -2.4999998
       objectReference: {fileID: 0}
     - target: {fileID: 550737499994463838, guid: af3279c96b97a354b9679db0bfe02ba0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18204,7 +18217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550737499994463838, guid: af3279c96b97a354b9679db0bfe02ba0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: -2.0000021
       objectReference: {fileID: 0}
     - target: {fileID: 550737499994463838, guid: af3279c96b97a354b9679db0bfe02ba0, type: 3}
       propertyPath: m_LocalRotation.w

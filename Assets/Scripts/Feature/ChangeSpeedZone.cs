@@ -13,7 +13,6 @@ namespace PlatformCharacterController
         public GameObject DashingEffect;
         public GameObject RunningEffect;
         private MovementCharacterController _movementController;
-        private bool _isSlowingDown = false;
         private float _actualSpeed;
         private GameObject _player;
 
