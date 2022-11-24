@@ -3193,6 +3193,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7123523376295646400, guid: 5547204c0f3ea414aa70144a43e1b1d4, type: 3}
   m_PrefabInstance: {fileID: 539617990}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &407166454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5031848757698064635, guid: 8267670f7d2f73b42bbd6beacede7eb8, type: 3}
+  m_PrefabInstance: {fileID: 745206597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &407981942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1467076959044028162, guid: 5d12b7f68add57343961123a2bf534a5, type: 3}
@@ -9644,6 +9649,10 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
+      propertyPath: gamePassObj
+      value: 
+      objectReference: {fileID: 2142403888}
+    - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: HaveSlowFall
       value: 0
       objectReference: {fileID: 0}
@@ -9658,7 +9667,7 @@ PrefabInstance:
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: checkPointObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 407166454}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: fallThreshold
       value: 15
