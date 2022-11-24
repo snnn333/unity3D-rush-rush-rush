@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5031848757698064636}
-  - component: {fileID: 5939874511289128403}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -33,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5939874511289128403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5031848757698064635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10584b8dd3cf949e2bf0b4abc4122a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: 86ae26ef06dc4400eaeaf7984eb58f70, type: 3}
 --- !u!65 &7752832145795320096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74,19 +60,7 @@ MonoBehaviour:
   isActived: 0
   disabledMaterial: {fileID: -5243988174349660497, guid: 4b8e97e9b9623c942bb52651a13d8ecb, type: 3}
   myVFX: {fileID: 165102, guid: 4de72d65c2293424cbe6461a89fe2997, type: 3}
---- !u!114 &5152543977060944754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5266359537676602082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10584b8dd3cf949e2bf0b4abc4122a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinSound: {fileID: 8300000, guid: 86ae26ef06dc4400eaeaf7984eb58f70, type: 3}
+  successSound: {fileID: 8300000, guid: 86ae26ef06dc4400eaeaf7984eb58f70, type: 3}
 --- !u!1001 &1226645804900528217
 PrefabInstance:
   m_ObjectHideFlags: 0
