@@ -15,6 +15,8 @@ public class ShopItem : MonoBehaviour
 
     public GameObject usedEffect;
 
+    public AudioClip rejectSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -24,12 +26,18 @@ public class ShopItem : MonoBehaviour
                 // Do not use the item if the player has full health
                 if (healthManager.currentHealth == healthManager.maxHealth) {
                     DisplayMessage("Your health is full!");
+                    if (rejectSound != null) {
+                        AudioSource.PlayClipAtPoint(rejectSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+                    }
                     return;
                 }
                 bag.RemoveMultipleItem(coin, cost); // Decrease the money
                 UseItem();
             } else {
                 DisplayMessage("Insufficient Coins!");
+                if (rejectSound != null) {
+                        AudioSource.PlayClipAtPoint(rejectSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
+                }
             }
         }
     }
