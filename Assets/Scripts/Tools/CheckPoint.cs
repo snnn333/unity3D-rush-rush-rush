@@ -14,15 +14,15 @@ public class CheckPoint : MonoBehaviour
     // VFX
     public GameObject myVFX;
     public AudioClip successSound;
-    private Renderer renderer;
+    private Renderer myRenderer;
 
     public void Start()
     {
-        renderer = GetComponent<Renderer>();
+        myRenderer = GetComponent<Renderer>();
         // copy reference to the original material
-        enabledMaterial = renderer.material;
+        enabledMaterial = myRenderer.material;
         // Disable material
-        renderer.material = disabledMaterial;
+        myRenderer.material = disabledMaterial;
     }
 
     public void Awake()
@@ -49,7 +49,7 @@ public class CheckPoint : MonoBehaviour
             other.GetComponent<MovementCharacterController>().checkPointObj = gameObject.transform.parent.gameObject;
             isActived = true;
             // Enable material
-            renderer.material = enabledMaterial;
+            myRenderer.material = enabledMaterial;
         }
 
         if (other.CompareTag("Player")) {

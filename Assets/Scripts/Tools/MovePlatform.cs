@@ -11,7 +11,6 @@ public class MovePlatform : MonoBehaviour
     public Vector3 m_Direction = Vector3.up;
     Vector3 m_StartPosition;
     private float m_StartTime;
-    private bool m_IsMoving;
 
     void Start()
     {
@@ -32,9 +31,7 @@ public class MovePlatform : MonoBehaviour
 
     private IEnumerator Wait()
         {
-            m_IsMoving = false;
             yield return new WaitForSeconds(m_WaitTime);
-            m_IsMoving = true;
             m_StartTime = Time.time;
             m_Direction = -1 * m_Direction;
         }
