@@ -20,10 +20,16 @@ public class ShopItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if (bag.ContainsItem(coin) && coin.num >= cost) {
+                Health healthManager = GameObject.Find("Player").GetComponent<Health>();
+                // Do not use the item if the player has full health
+                if (healthManager.currentHealth == healthManager.maxHealth) {
+                    DisplayMessage("Your health is full!");
+                    return;
+                }
                 bag.RemoveMultipleItem(coin, cost); // Decrease the money
                 UseItem();
             } else {
-                DisplayMessage("Not enough moeny");
+                DisplayMessage("Insufficient Coins!");
             }
         }
     }
@@ -35,7 +41,9 @@ public class ShopItem : MonoBehaviour
                 AudioSource.PlayClipAtPoint(useSound, 0.9f*Camera.main.transform.position + 0.1f*transform.position ,10f);
         }
 
-        GameObject.Find("Player").GetComponent<Health>().GainHealth(1);
+        Health healthManager = GameObject.Find("Player").GetComponent<Health>();
+        
+        healthManager.GainHealth(1);
         Debug.Log("Gain 1 health");
 
         if (usedEffect) {
