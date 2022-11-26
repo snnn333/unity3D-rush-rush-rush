@@ -28,6 +28,8 @@ namespace PlatformCharacterController
 
         public GameObject LevelTextInfo;
 
+        public Bag bag;
+
         private void Start()
         {
             DiamondTextInfo.SetActive(false);
@@ -115,6 +117,11 @@ namespace PlatformCharacterController
 
         IEnumerator LoadLevel(string scenename)
         {
+            // Reset the bag
+            if(bag != null){
+                bag.ResetBag();
+            }
+
             // Start entering effect
             GameObject player = GameObject.FindWithTag("Player");
             

@@ -21,7 +21,7 @@ public class LocalSceneManager : MonoBehaviour
         instance = this;
     }
 
-    void EnterLevel1()
+    public void EnterLevel1()
     {
         if(bag != null){
             bag.ResetBag();
@@ -29,22 +29,27 @@ public class LocalSceneManager : MonoBehaviour
         SceneManager.LoadScene("Level 1");
     }
     
-    void EnterLevelSelection()
+    public void EnterLevelSelection()
     {
-        StatisticManager.QuitAndSaveData();
+        // StatisticManager.QuitAndSaveData();
         if(bag != null){
             bag.ResetBag();
         }
         SceneManager.LoadScene("Level Selector");
     }
 
-    void EnterMainScene()
+    public void EnterMainScene()
     {
         
-        StatisticManager.QuitAndSaveData();
+        // StatisticManager.QuitAndSaveData();
         if(bag != null){
             bag.ResetBag();
         }
         SceneManager.LoadScene("Start");
+    }
+
+    public void EnterControlTutorial()
+    {
+        SceneManager.LoadScene("Control");
     }
 }
