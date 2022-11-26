@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 
 namespace PlatformCharacterController
@@ -14,12 +15,24 @@ namespace PlatformCharacterController
         
         [Tooltip("Name of the next scene.")]
         public string scenename;
+        public int TotalDiamond;
         public Animator transaction;
 
         public GameObject LevelTitle;
 
         public GameObject EnterEffect;
         public AudioClip EnterSound;
+
+        public GameObject DiamondTextInfo;
+        public GameObject DiamondText;
+
+        public GameObject LevelTextInfo;
+
+        private void Start()
+        {
+            DiamondTextInfo.SetActive(false);
+            LevelTextInfo.SetActive(true);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -31,8 +44,27 @@ namespace PlatformCharacterController
             else if (other.CompareTag("Player") && IsNeedKeyPress == true)
             {
                 _IsEntered = true;
-                DisplayMessage("Press [E] to Enter Level");
+                // DisplayMessage("Press [E] to Enter Level");
                 Debug.Log("Needs key press to enter the level");
+
+                // Update the diamond count
+                if (DiamondText) {
+                    LevelTextInfo.SetActive(false);
+                    DiamondTextInfo.SetActive(true);
+                    int maxDiamondCount = PlayerPrefs.GetInt(scenename + "-MaxDiamondCount", 0);
+                    DiamondText.GetComponent<Text>().text = maxDiamondCount.ToString() + "/" + TotalDiamond.ToString();
+
+                }
+
+                // Display the level title
+                string scenetitle = GetLevelTitle(scenename);
+
+                if (scenetitle == "") {
+                    GameObject.Find("LevelTitleText").GetComponent<TextMeshProUGUI>().text = scenename;
+                } else {
+                    GameObject.Find("LevelTitleText").GetComponent<TextMeshProUGUI>().text = scenename + "-" + scenetitle;
+                }
+                
             }
         }
 
@@ -48,6 +80,11 @@ namespace PlatformCharacterController
         private void OnTriggerExit(Collider other)
         {
             _IsEntered = false;
+            DiamondTextInfo.SetActive(false);
+            LevelTextInfo.SetActive(true);
+
+            // Reset level title
+            GameObject.Find("LevelTitleText").GetComponent<TextMeshProUGUI>().text = "Main Map";
         }
 
         private void DisplayMessage(string msg){
@@ -60,6 +97,20 @@ namespace PlatformCharacterController
         public void LoadNextLevel()
         {
             StartCoroutine(LoadLevel(scenename));
+        }
+
+        private string GetLevelTitle(string scenename) {
+            if (scenename == "Level 1") {
+                return "Bullet Hill";
+            } else if (scenename == "Level 2") {
+                return "Ruined Castle";
+            } else if (scenename == "Level 3") {
+                return "Windy Beach";
+            } else if (scenename == "Level 4") {
+                return "Icy Mountain";
+            } else {
+                return "";
+            }
         }
 
         IEnumerator LoadLevel(string scenename)
@@ -87,17 +138,8 @@ namespace PlatformCharacterController
             yield return new WaitForSeconds(1f);
             // Set the text
             var text = LevelTitle.GetComponent<TextMeshProUGUI>();
-            text.text = scenename;
-            if (scenename == "Level 1") {
-                text.text += "\nBullet Hill";
-            } else if (scenename == "Level 2") {
-                text.text += "\nRuined Castle";
-            } else if (scenename == "Level 3") {
-                text.text += "\nWindy Beach";
-            } else if (scenename == "Level 4") {
-                text.text += "\nIcy Mountain";
-            }
-
+            text.text = scenename + "\n" + GetLevelTitle(scenename);
+            
             yield return new WaitForSeconds(1f);
 
             SceneManager.LoadScene(scenename);

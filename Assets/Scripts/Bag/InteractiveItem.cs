@@ -43,7 +43,7 @@ public class InteractiveItem : MonoBehaviour
             if (!consumable){
                 Debug.Log("Item is not consumable");
                 if(myBag.itemList.Contains(key)){
-                    DisplayMessage(successMessage);
+                    // DisplayMessage(successMessage);
     
                     Destroy(this.gameObject);
                     SpawnEffect();
@@ -57,7 +57,7 @@ public class InteractiveItem : MonoBehaviour
                 Debug.Log("Item is consumable");
                 var result = myBag.RemoveMultipleItem(key,cost);
                 if(result){
-                    DisplayMessage(successMessage);
+                    // DisplayMessage(successMessage);
                     
                     Destroy(this.gameObject);
                     SpawnEffect();
