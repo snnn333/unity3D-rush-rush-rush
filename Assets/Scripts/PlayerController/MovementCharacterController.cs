@@ -170,7 +170,9 @@ namespace PlatformCharacterController
             _cameraTransform = Camera.main.transform;
             _dashCooldown = DashCooldown;
             _gravity = Gravity;
-            parachuteUI = canvasObj.transform.FindChild("Prop").gameObject;
+            if(canvasObj != null){
+                parachuteUI = canvasObj.transform.FindChild("Prop").gameObject;
+            }
 
         }
 
@@ -486,6 +488,7 @@ namespace PlatformCharacterController
             _controller.Move(transform.forward * SlowFallForwardSpeed);
 
             // Avoid resetting the y speed when the player is lifting
+            activateParachute();
             if (IsLifting == false) {
                 
                 _velocity.y = 0;
