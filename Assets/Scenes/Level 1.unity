@@ -13038,17 +13038,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3406908019065043324, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+    - target: {fileID: 3000008472861131404, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406908019065043324, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3666026692514061422, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_Volume
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 3757742521247933769, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -320
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451931597041594376, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_text
+      value: 0/3
+      objectReference: {fileID: 0}
     - target: {fileID: 6827716225631107438, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8821287432073441196, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: Health
@@ -13153,6 +13165,10 @@ PrefabInstance:
     - target: {fileID: 8821287432858951118, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924411759830854424, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 9095050987232549657, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: TotalDiamond
