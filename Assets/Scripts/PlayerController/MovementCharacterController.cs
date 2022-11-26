@@ -148,6 +148,12 @@ namespace PlatformCharacterController
 
         public GameObject checkPointObj;
         public bool IsLifting;  // Whether the player is lifted by the wind
+
+
+        public bool parachuteActive;
+        public GameObject canvasObj;
+        public GameObject parachuteUI;
+        private int parachuteCount= 5;
         
         private void Awake()
         {
@@ -164,10 +170,23 @@ namespace PlatformCharacterController
             _cameraTransform = Camera.main.transform;
             _dashCooldown = DashCooldown;
             _gravity = Gravity;
+            parachuteUI = canvasObj.transform.FindChild("Prop").gameObject;
+
         }
 
         private void Update()
         {
+            if(!parachuteActive){
+                if(parachuteUI != null){
+                    parachuteUI.SetActive(false);
+                    Debug.Log("close parachute");
+                }
+            }
+            parachuteCount -=1;
+            if(parachuteCount <= 0){
+                parachuteActive = false;
+            }
+
             if (health.currentHealth <= 0 || gamePassObj != null && gamePassObj.activeInHierarchy)
             {
                 return;
@@ -248,6 +267,7 @@ namespace PlatformCharacterController
                 //slow fall
                 if (_activeFall)
                 {
+                    activateParachute();
                     _slowFall = !_slowFall;
                     _activeFall = false;
                 }
@@ -470,6 +490,19 @@ namespace PlatformCharacterController
                 
                 _velocity.y = 0;
                 _velocity.y += -SlowFallSpeed;
+                activateParachute();
+            }
+        }
+        private void activateParachute(){
+            if(parachuteUI != null){
+                parachuteActive=true;
+                parachuteCount = 30;
+                // Debug.Log("open parachute");
+                parachuteUI.SetActive(true);
+                for (int a = 0; a < parachuteUI.transform.childCount; a++)
+                {
+                    parachuteUI.transform.GetChild(a).gameObject.SetActive(true);
+                }
             }
         }
 

@@ -1626,6 +1626,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8092635978188068076, guid: 4d7f83b343673e94794b302deb1f0bc8, type: 3}
   m_PrefabInstance: {fileID: 1067201393}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &529734626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8821287432858951118, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+  m_PrefabInstance: {fileID: 2142403887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &560831503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4080,6 +4085,10 @@ PrefabInstance:
       propertyPath: Jetpack
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
+      propertyPath: canvasObj
+      value: 
+      objectReference: {fileID: 529734626}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7748,6 +7757,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 376959827731460884, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165372110879259546, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8821287432073441196, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
       propertyPath: Health
       value: 
