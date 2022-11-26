@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 
 namespace PlatformCharacterController
@@ -14,12 +15,25 @@ namespace PlatformCharacterController
         
         [Tooltip("Name of the next scene.")]
         public string scenename;
+        public int TotalDiamond;
         public Animator transaction;
 
         public GameObject LevelTitle;
 
         public GameObject EnterEffect;
         public AudioClip EnterSound;
+
+        public GameObject DiamondTextInfo;
+        public GameObject DiamondText;
+
+        public GameObject LevelTextInfo;
+
+
+        private void Start()
+        {
+            DiamondTextInfo.SetActive(false);
+            LevelTextInfo.SetActive(true);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -33,6 +47,15 @@ namespace PlatformCharacterController
                 _IsEntered = true;
                 DisplayMessage("Press [E] to Enter Level");
                 Debug.Log("Needs key press to enter the level");
+
+                // Update the diamond count
+                if (DiamondText) {
+                    LevelTextInfo.SetActive(false);
+                    DiamondTextInfo.SetActive(true);
+                    int maxDiamondCount = PlayerPrefs.GetInt(scenename + "-MaxDiamondCount", 0);
+                    DiamondText.GetComponent<Text>().text = maxDiamondCount.ToString() + "/" + TotalDiamond.ToString();
+
+                }
             }
         }
 
@@ -48,6 +71,8 @@ namespace PlatformCharacterController
         private void OnTriggerExit(Collider other)
         {
             _IsEntered = false;
+            DiamondTextInfo.SetActive(false);
+            LevelTextInfo.SetActive(true);
         }
 
         private void DisplayMessage(string msg){
