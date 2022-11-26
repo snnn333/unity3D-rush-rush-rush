@@ -181,7 +181,7 @@ namespace PlatformCharacterController
             if(!parachuteActive){
                 if(parachuteUI != null){
                     parachuteUI.SetActive(false);
-                    Debug.Log("close parachute");
+                    // Debug.Log("close parachute");
                 }
             }
             parachuteCount -=1;
@@ -200,7 +200,7 @@ namespace PlatformCharacterController
             {   
                 // Debug.Log("Falling");
                 previousY = _characterTransform.position.y;
-                Debug.Log("Previous Y: " + previousY);
+                // Debug.Log("Previous Y: " + previousY);
             }
             
             if (!previous && _isGrounded)
