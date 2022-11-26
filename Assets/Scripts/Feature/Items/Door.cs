@@ -21,10 +21,10 @@ public class Door : MonoBehaviour
         // Display the win screen
         gamePassObj.SetActive(true);
 
-        // empty backpack
-        if(bag != null){
-            bag.ResetBag();
-        }
+        // // empty backpack
+        // if(bag != null){
+        //     bag.ResetBag();
+        // }
 
         GameManager.passLevel(passLevel);
 
