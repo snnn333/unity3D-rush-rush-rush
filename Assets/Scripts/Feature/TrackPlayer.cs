@@ -134,7 +134,7 @@ public class TrackPlayer : MonoBehaviour
             }
 
             Destroy(other.gameObject);
-            DisplayMessage(msg);
+            // DisplayMessage(msg);
             resetItem();
         }
         else if (other.gameObject.tag == "Cannon Receiver") {
