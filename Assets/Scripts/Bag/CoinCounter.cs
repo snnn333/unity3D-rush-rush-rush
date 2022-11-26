@@ -26,7 +26,6 @@ public class CoinCounter : MonoBehaviour
                 coinCount = 0;
             }
         }
-        diff = coinCount - lastCount;
     }
 
     void updateDisplay(){
@@ -42,14 +41,16 @@ public class CoinCounter : MonoBehaviour
 
     void popUp(){
         if(popupText != null){
+            diff = coinCount - lastCount;
+
             if(diff > 0){
+                popupText.GetComponent<TextMeshProUGUI>().text = "+"+diff.ToString();
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
                 effect.transform.SetParent(transform, false); 
-                popupText.GetComponent<TextMeshProUGUI>().text = "+"+diff;
             }else if (diff < 0){
+                popupText.GetComponent<TextMeshProUGUI>().text = ""+diff.ToString();
                 var effect = Instantiate(popupText,transform.position, transform.rotation);
                 effect.transform.SetParent(transform, false); 
-                popupText.GetComponent<TextMeshProUGUI>().text = ""+diff;
             }
         }
     }
