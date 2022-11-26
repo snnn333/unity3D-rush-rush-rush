@@ -9,6 +9,8 @@ public class Bag : ScriptableObject
 
     public void ResetBag(){
         for (int i = 0; i < itemList.Count; i++){
+            if (itemList[i] == null) return;
+            itemList[i].num = 0; // Set the item num to 0
             itemList[i] = null;
         }
     }
@@ -54,6 +56,12 @@ public class Bag : ScriptableObject
             return false;
         }
     }
+
+    // public void ResetItem(Item item) {
+    //     if (itemList.Contains(item)) {
+    //         item.num = 0;
+    //     }
+    // }
 
     public bool RemoveItem(Item item){
         if(itemList.Contains(item) && item.num > 0){

@@ -171,7 +171,7 @@ namespace PlatformCharacterController
             _dashCooldown = DashCooldown;
             _gravity = Gravity;
             if(canvasObj != null){
-                parachuteUI = canvasObj.transform.FindChild("Prop").gameObject;
+                parachuteUI = canvasObj.transform.Find("Prop").gameObject;
             }
 
         }
