@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsNeedKeyPress: 1
-  scenename: Level 4
-  TotalDiamond: 5
+  scenename: Level 1
+  TotalDiamond: 3
   transaction: {fileID: 0}
   LevelTitle: {fileID: 0}
   EnterEffect: {fileID: 143098, guid: 7d5bdfc07d77aab4a963e018ba7bccc4, type: 3}
@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114359989158028234, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_Text
-      value: Level 4
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 114359989158028234, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -838,10 +838,6 @@ PrefabInstance:
     - target: {fileID: 114359989158028234, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905091840808210, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
-      propertyPath: m_EffectDistance.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114974046678368944, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_Enabled
