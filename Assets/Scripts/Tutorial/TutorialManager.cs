@@ -101,24 +101,12 @@ public class TutorialManager : MonoBehaviour
             }
             
         } else if(popUpIndex == 5){
-            if(bag.ContainsItem(Torch)){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 6){
-            if(Ice == null){
-                if(!waiting){
-                    StartCoroutine(waiter());
-                }
-            }
-        } else if(popUpIndex == 7){
             if(coinDoor == null){
                 if(!waiting){
                     StartCoroutine(waiter());
                 }
             }
-        } else if(popUpIndex == 8){
+        } else if(popUpIndex == 6){
             
         } 
     }
