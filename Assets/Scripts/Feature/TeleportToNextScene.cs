@@ -45,7 +45,7 @@ namespace PlatformCharacterController
             else if (other.CompareTag("Player") && IsNeedKeyPress == true)
             {
                 _IsEntered = true;
-                DisplayMessage("Press [E] to Enter Level");
+                // DisplayMessage("Press [E] to Enter Level");
                 Debug.Log("Needs key press to enter the level");
 
                 // Update the diamond count
