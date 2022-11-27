@@ -3307,23 +3307,23 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     - target: {fileID: 5512097619695288440, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619695288440, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619695288440, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619695288440, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619695288440, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619695288440, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3542,6 +3542,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5512097620088063139, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 29a65ac2b4184854b83336cabc720008, type: 3}
+    - target: {fileID: 5512097620088063139, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -3645,6 +3649,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5512097620684910257, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 29a65ac2b4184854b83336cabc720008, type: 3}
     - target: {fileID: 5512097620684910257, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_Color.b
       value: 1
