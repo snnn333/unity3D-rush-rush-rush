@@ -121,11 +121,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 93958b4038fe9498a866f3f4ed27e801, type: 3}
-    m_FontSize: 50
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -354,8 +354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2786988166975388384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 1.4, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalPosition: {x: -0.54, y: 1.43, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children: []
   m_Father: {fileID: 514052448056157332}
   m_RootOrder: 1
@@ -437,7 +437,7 @@ RectTransform:
   m_GameObject: {fileID: 3076119267580830658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 514052448056157332}
   m_RootOrder: 0
@@ -955,15 +955,19 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: 93958b4038fe9498a866f3f4ed27e801, type: 3}
     - target: {fileID: 114359989158028234, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114359989158028234, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114974046678368944, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224185240072003048, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 224610132236640268, guid: ddcd09b5894cc6f489552f7f04cac4ca, type: 3}
       propertyPath: m_Pivot.x
