@@ -3212,6 +3212,10 @@ PrefabInstance:
       value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5061768535008491069, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
+      propertyPath: m_text
+      value: Pick up the Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061768535008491069, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_fontColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -3235,6 +3239,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5512097619033170826, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512097619033170826, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
     - target: {fileID: 5512097619153567695, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_Layer
       value: 4
@@ -3257,7 +3269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619164150324, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_text
-      value: Press "SPACE" to jump
+      value: '[Space] to Jump'
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619164150324, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_sharedMaterial
@@ -3475,7 +3487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619805489021, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_text
-      value: Enter the teleport door to start real journey...
+      value: Enter teleport to start your journey
       objectReference: {fileID: 0}
     - target: {fileID: 5512097619805489021, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_fontSize
@@ -3511,7 +3523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512097620073167390, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_text
-      value: Go towards the door to open it
+      value: Use the key to Open the Door
       objectReference: {fileID: 0}
     - target: {fileID: 5512097620073167390, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_fontSize
@@ -3679,7 +3691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512097620852303908, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_text
-      value: Click WASD keys to move around
+      value: '[WASD] to Move'
       objectReference: {fileID: 0}
     - target: {fileID: 5512097620852303908, guid: 1f534a1f92f7ae449aa2a97fbd077711, type: 3}
       propertyPath: m_sharedMaterial

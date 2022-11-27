@@ -38,7 +38,7 @@ public class TutorialManager : MonoBehaviour
 
 
 
-    private int popUpIndex = 0;
+    private int popUpIndex = 1;
     private bool waiting = false;
     // Start is called before the first frame update
     void Start()
