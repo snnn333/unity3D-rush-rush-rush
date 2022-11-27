@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8267670f7d2f73b42bbd6beacede7eb8, type: 3}
+--- !u!1 &21592411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8821287431847972380, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+  m_PrefabInstance: {fileID: 692649272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &42473178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4206,6 +4211,10 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
+      propertyPath: gamePassObj
+      value: 
+      objectReference: {fileID: 21592411}
+    - target: {fileID: 114132050162566044, guid: bb1b050705f31ee4881a895c7d554008, type: 3}
       propertyPath: HaveSlowFall
       value: 1
       objectReference: {fileID: 0}
@@ -4255,7 +4264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   currentHealth: 0
-  gameOverObj: {fileID: 0}
+  gameOverObj: {fileID: 1250836082}
   audioSource: {fileID: 0}
   deadClip: {fileID: 0}
 --- !u!54 &1135891769
@@ -4572,6 +4581,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1250836082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8821287431588681151, guid: ee0323a2d1d34694cad8d1039c5872a3, type: 3}
+  m_PrefabInstance: {fileID: 692649272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1253585556
 GameObject:
   m_ObjectHideFlags: 0
@@ -6914,7 +6928,7 @@ PrefabInstance:
     - target: {fileID: 327876928288883686, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: gamePassObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21592411}
     - target: {fileID: 6120309089039622801, guid: fe6a02cad468cbb469c807b456f8e6da, type: 3}
       propertyPath: m_Name
       value: GoalTeleport
