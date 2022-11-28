@@ -34,7 +34,7 @@ public class CoinCounter : MonoBehaviour
         text.text = coinCount.ToString();
 
         // Append the total diamond to the diamond count
-        if (Coin.name == "Diamond" && TotalDiamond != 0) {
+        if (Coin.name == "Diamond") {
             text.text += "/" + TotalDiamond;
         }
     }

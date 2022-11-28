@@ -56,12 +56,12 @@ namespace PlatformCharacterController
                 // Lift up the player
                 controller.Lift(strength, direction);
 
-                // After jump, start the slow fall
-                if (Input.GetKeyUp("space") && controller._slowFall == false) {
-                    // Enable the slow fall if haven't
-                    controller.Lift(strength, direction);
-                    controller._slowFall = true;
-            }
+            //     // After jump, start the slow fall
+            //     if (Input.GetKeyUp("space") && controller._slowFall == false) {
+            //         // Enable the slow fall if haven't
+            //         // controller.Lift(strength, direction);
+            //         // controller._slowFall = true;
+            // }
             }
         }
 
